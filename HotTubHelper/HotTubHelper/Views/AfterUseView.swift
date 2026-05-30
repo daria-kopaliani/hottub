@@ -74,7 +74,7 @@ struct AfterUseView: View {
         }
         .headerProminence(.increased)
         .navigationTitle("After-Use Dose")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 

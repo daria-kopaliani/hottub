@@ -13,12 +13,20 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section {
+                Picker("Units", selection: $config.useMetric) {
+                    Text("Metric").tag(true)
+                    Text("Imperial").tag(false)
+                }
+            }
+
+            Section {
                 HStack {
                     Text("Volume")
                     Spacer()
                     NumericTextField(text: $volumeText, allowDecimal: false)
                         .focused($volumeFocused)
                         .foregroundStyle(volumeFocused ? Color.primary : Color.accentColor)
+                        .multilineTextAlignment(.trailing)
                         .frame(width: 80)
                         .onAppear { syncVolumeText() }
                         .onChange(of: volumeText) { _, newValue in
@@ -34,15 +42,14 @@ struct SettingsView: View {
                         .onChange(of: config.useMetric) { _, _ in
                             if !volumeFocused { syncVolumeText() }
                         }
-                    Text(VolumeUnit.unitLabel(metric: config.useMetric))
+                    Text(config.useMetric ? "liters" : "gallons")
                         .foregroundStyle(.secondary)
-                        .frame(width: 30, alignment: .leading)
                 }
                 Picker("Sanitizer", selection: $config.sanitizer) {
                     ForEach(Sanitizer.allCases) { Text($0.displayName).tag($0) }
                 }
             } header: {
-                SectionHeaderLabel("Hot tub")
+                SectionHeaderLabel("Your hot tub")
             }
 
             Section {
@@ -59,34 +66,21 @@ struct SettingsView: View {
             }
 
             Section {
-                Picker("Units", selection: $config.useMetric) {
-                    Text("Metric").tag(true)
-                    Text("Imperial").tag(false)
-                }
-                .pickerStyle(.segmented)
-                .labelsHidden()
-            } header: {
-                SectionHeaderLabel("Units")
+                LinkRow(title: "Privacy policy",
+                        url: URL(string: "https://daria-kopaliani.github.io/moondog/hottub/privacy.html")!)
+                LinkRow(title: "Support",
+                        url: URL(string: "https://daria-kopaliani.github.io/moondog/hottub/support.html")!)
             } footer: {
-                Text("Metric: grams, milliliters, liters. Imperial: ounces, fluid ounces, gallons.")
+                Text("v\(appVersion)")
+                    .frame(maxWidth: .infinity, alignment: .center)
                     .font(.footnote)
-            }
-
-            Section {
-                LabeledContent("Version", value: appVersion)
-                ExternalLinkRow(
-                    title: "Privacy policy",
-                    url: URL(string: "https://daria-kopaliani.github.io/moondog/hottub/privacy.html")!)
-                ExternalLinkRow(
-                    title: "Support",
-                    url: URL(string: "https://daria-kopaliani.github.io/moondog/hottub/support.html")!)
-            } header: {
-                SectionHeaderLabel("About")
+                    .padding(.top, 8)
             }
         }
         .headerProminence(.increased)
+        .contentMargins(.top, 0, for: .scrollContent)
         .navigationTitle("Settings")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.large)
     }
 
     private func syncVolumeText() {
@@ -98,7 +92,7 @@ struct SettingsView: View {
     }
 }
 
-private struct ExternalLinkRow: View {
+private struct LinkRow: View {
     let title: String
     let url: URL
 

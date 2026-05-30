@@ -46,7 +46,7 @@ struct ShockView: View {
         }
         .headerProminence(.increased)
         .navigationTitle("Shock")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 

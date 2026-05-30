@@ -76,7 +76,7 @@ struct TestAdjustView: View {
         }
         .headerProminence(.increased)
         .navigationTitle("Test & Adjust")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.large)
     }
 
     private var sanitizerLabel: String {
