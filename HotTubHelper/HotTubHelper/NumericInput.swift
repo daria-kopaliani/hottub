@@ -67,10 +67,15 @@ struct DoseHero: View {
             Text(product)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
-            Text(dose.formatted(metric: metric))
-                .font(.system(size: 44, weight: .bold, design: .rounded))
-                .monospacedDigit()
-                .foregroundStyle(Color.accentColor)
+            HStack(alignment: .lastTextBaseline, spacing: 4) {
+                Text(dose.formattedAmount(metric: metric))
+                    .font(.system(size: 44, weight: .bold, design: .rounded))
+                    .monospacedDigit()
+                    .foregroundStyle(Color.accentColor)
+                Text(dose.unitLabel(metric: metric))
+                    .font(.system(size: 24, weight: .semibold, design: .rounded))
+                    .foregroundStyle(Color.accentColor.opacity(0.5))
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 6)

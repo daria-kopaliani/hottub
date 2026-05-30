@@ -373,12 +373,17 @@ struct RecommendationRow: View {
                         .foregroundStyle(.secondary)
                 }
                 Spacer(minLength: 8)
-                Text(rec.dose.formatted(metric: metric))
-                    .font(.system(size: 32, weight: .bold, design: .rounded))
-                    .monospacedDigit()
-                    .foregroundStyle(Color.accentColor)
-                    .lineLimit(1)
-                    .fixedSize(horizontal: true, vertical: false)
+                HStack(alignment: .lastTextBaseline, spacing: 2) {
+                    Text(rec.dose.formattedAmount(metric: metric))
+                        .font(.system(size: 32, weight: .bold, design: .rounded))
+                        .monospacedDigit()
+                        .foregroundStyle(Color.accentColor)
+                    Text(rec.dose.unitLabel(metric: metric))
+                        .font(.system(size: 18, weight: .semibold, design: .rounded))
+                        .foregroundStyle(Color.accentColor.opacity(0.5))
+                }
+                .lineLimit(1)
+                .fixedSize(horizontal: true, vertical: false)
             }
             if let detail = rec.detail {
                 Text(detail)

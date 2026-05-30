@@ -83,26 +83,35 @@ struct Dose: Equatable {
 
     func formatted(metric: Bool = true) -> String {
         if isNegligible { return "—" }
+        let amount = formattedAmount(metric: metric)
+        let unit = unitLabel(metric: metric)
+        return unit.isEmpty ? amount : "\(amount) \(unit)"
+    }
+
+    func formattedAmount(metric: Bool = true) -> String {
+        if isNegligible { return "—" }
         if metric {
-            switch unit {
-            case .grams:
-                return amount < 10
-                    ? String(format: "%.1f g", amount)
-                    : String(format: "%.0f g", amount)
-            case .milliliters:
-                return amount < 10
-                    ? String(format: "%.1f ml", amount)
-                    : String(format: "%.0f ml", amount)
-            }
+            return amount < 10
+                ? String(format: "%.1f", amount)
+                : String(format: "%.0f", amount)
         } else {
             switch unit {
             case .grams:
                 let oz = amount / 28.3495
-                return String(format: "%.2f oz", oz)
+                return String(format: "%.2f", oz)
             case .milliliters:
                 let flOz = amount / 29.5735
-                return String(format: "%.2f fl oz", flOz)
+                return String(format: "%.2f", flOz)
             }
+        }
+    }
+
+    func unitLabel(metric: Bool = true) -> String {
+        if isNegligible { return "" }
+        if metric {
+            return unit == .grams ? "g" : "ml"
+        } else {
+            return unit == .grams ? "oz" : "fl oz"
         }
     }
 }
