@@ -10,7 +10,7 @@ struct MainView: View {
                     NavigationLink {
                         TestAdjustView()
                     } label: {
-                        ActionRow(symbol: "drop.triangle.fill",
+                        ActionRow(symbol: "eyedropper.halffull",
                                   tint: .blue,
                                   title: "Test & Adjust",
                                   subtitle: "Enter test readings, get exact doses")
@@ -19,7 +19,7 @@ struct MainView: View {
                         AfterUseView()
                     } label: {
                         ActionRow(symbol: "person.2.fill",
-                                  tint: .teal,
+                                  tint: .orange,
                                   title: "After-Use Dose",
                                   subtitle: "Sanitizer to add after a soak")
                     }
@@ -27,7 +27,7 @@ struct MainView: View {
                         ShockView()
                     } label: {
                         ActionRow(symbol: "bolt.fill",
-                                  tint: .orange,
+                                  tint: .pink,
                                   title: "Shock",
                                   subtitle: "Weekly shock dose")
                     }
@@ -45,7 +45,7 @@ struct MainView: View {
             }
             .headerProminence(.increased)
             .contentMargins(.top, 24, for: .scrollContent)
-            .navigationTitle("Hot Tub Helper")
+            .navigationTitle("Hot Tub Assistant")
         }
     }
 }
