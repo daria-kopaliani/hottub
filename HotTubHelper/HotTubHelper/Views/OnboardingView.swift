@@ -314,7 +314,7 @@ private struct ChemicalsStep: View {
             .background(Color(.secondarySystemGroupedBackground))
             .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
 
-            Text("You can change any of these later in Settings.")
+            Text("Pick what's on your shelf — we'll size doses to match.")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
         }
