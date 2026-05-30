@@ -26,6 +26,8 @@ enum Sanitizer: String, CaseIterable, Codable, Identifiable {
         case .bromine: return 2.0...4.0
         }
     }
+
+    var practicalRange: ClosedRange<Double> { 0...20 }
 }
 
 enum ChlorineProduct: String, CaseIterable, Codable, Identifiable {
@@ -117,5 +119,18 @@ struct Recommendation: Identifiable, Equatable {
             && lhs.product == rhs.product
             && lhs.dose == rhs.dose
             && lhs.detail == rhs.detail
+    }
+}
+
+struct Advisory: Identifiable, Equatable {
+    enum Kind { case info, warning }
+
+    let id = UUID()
+    let title: String
+    let body: String
+    let kind: Kind
+
+    static func == (lhs: Advisory, rhs: Advisory) -> Bool {
+        lhs.title == rhs.title && lhs.body == rhs.body && lhs.kind == rhs.kind
     }
 }

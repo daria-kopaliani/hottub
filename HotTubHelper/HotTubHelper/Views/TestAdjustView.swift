@@ -21,6 +21,10 @@ struct TestAdjustView: View {
         computeRecommendations()
     }
 
+    private var advisories: [Advisory] {
+        computeAdvisories()
+    }
+
     var body: some View {
         Form {
             Section {
@@ -29,6 +33,7 @@ struct TestAdjustView: View {
                            text: $sanitizerText,
                            parsedValue: sanitizerValue,
                            target: config.sanitizer.targetRange,
+                           practical: config.sanitizer.practicalRange,
                            rangeText: DisplayFormat.rangeOneDecimal(config.sanitizer.targetRange))
                     .task {
                         if CommandLine.arguments.contains("-UITestSampleReadings") {
@@ -44,28 +49,27 @@ struct TestAdjustView: View {
                            text: $phText,
                            parsedValue: phValue,
                            target: Formulas.TargetRange.pH,
+                           practical: Formulas.PracticalRange.pH,
                            rangeText: DisplayFormat.rangeOneDecimal(Formulas.TargetRange.pH))
                 readingRow(label: "Alkalinity",
                            unit: "ppm",
                            text: $taText,
                            parsedValue: taValue,
                            target: Formulas.TargetRange.totalAlkalinity,
+                           practical: Formulas.PracticalRange.totalAlkalinity,
                            rangeText: DisplayFormat.rangeInteger(Formulas.TargetRange.totalAlkalinity))
                 readingRow(label: "Calcium",
                            unit: "ppm",
                            text: $chText,
                            parsedValue: chValue,
                            target: Formulas.TargetRange.calciumHardness,
+                           practical: Formulas.PracticalRange.calciumHardness,
                            rangeText: DisplayFormat.rangeInteger(Formulas.TargetRange.calciumHardness))
             } header: {
-                HStack {
-                    Text("Your readings")
-                    Spacer()
-                    SanitizerPill(sanitizer: config.sanitizer)
-                }
-                .textCase(.none)
-                .font(.subheadline.weight(.medium))
-                .foregroundStyle(.primary)
+                Text("Your readings")
+                    .textCase(.none)
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(.primary)
             }
 
             resultsSection
@@ -73,7 +77,6 @@ struct TestAdjustView: View {
         .headerProminence(.increased)
         .navigationTitle("Test & Adjust")
         .navigationBarTitleDisplayMode(.inline)
-        .settingsToolbar()
     }
 
     private var sanitizerLabel: String {
@@ -87,30 +90,61 @@ struct TestAdjustView: View {
     private var resultsSection: some View {
         if !hasAnyReading {
             Section {
-                Text("Enter at least one reading above to see adjustments.")
-                    .foregroundStyle(.secondary)
-                    .padding(.vertical, 4)
-            }
-        } else if recommendations.isEmpty {
-            Section {
-                Label("Looking good. Nothing to add right now.",
-                      systemImage: "checkmark.seal.fill")
-                    .foregroundStyle(.green)
-                    .padding(.vertical, 4)
+                VStack(spacing: 12) {
+                    Image(systemName: "eyedropper.halffull")
+                        .font(.title)
+                        .foregroundStyle(.secondary)
+                    Text("Enter at least one reading above to see adjustments.")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 16)
             }
         } else {
-            Section {
-                ForEach(recommendations) { rec in
-                    RecommendationRow(rec: rec, metric: config.useMetric)
+            if !advisories.isEmpty {
+                Section {
+                    ForEach(advisories) { advisory in
+                        AdvisoryRow(advisory: advisory)
+                    }
+                } header: {
+                    Text("Heads up")
+                        .textCase(.none)
+                        .font(.subheadline.weight(.medium))
+                        .foregroundStyle(.primary)
                 }
-                Text("Add in the order shown. Wait at least 4 hours between major adjustments and re-test.")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
-            } header: {
-                Text("Add in this order")
-                    .textCase(.none)
-                    .font(.subheadline.weight(.medium))
-                    .foregroundStyle(.primary)
+            }
+
+            if recommendations.isEmpty && advisories.isEmpty {
+                Section {
+                    VStack(spacing: 10) {
+                        Image(systemName: "checkmark.seal.fill")
+                            .font(.largeTitle)
+                            .foregroundStyle(.green)
+                        Text("Looking good.")
+                            .font(.headline)
+                        Text("Nothing to add right now.")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 16)
+                }
+            } else if !recommendations.isEmpty {
+                Section {
+                    ForEach(recommendations) { rec in
+                        RecommendationRow(rec: rec, metric: config.useMetric)
+                    }
+                } header: {
+                    Text("Add in this order")
+                        .textCase(.none)
+                        .font(.subheadline.weight(.medium))
+                        .foregroundStyle(.primary)
+                } footer: {
+                    Text("Add in the order shown. Wait at least 4 hours between major adjustments and re-test.")
+                        .font(.footnote)
+                }
             }
         }
     }
@@ -121,12 +155,13 @@ struct TestAdjustView: View {
                             text: Binding<String>,
                             parsedValue: Double?,
                             target: ClosedRange<Double>,
+                            practical: ClosedRange<Double>,
                             rangeText: String) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(spacing: 10) {
                 Circle()
-                    .fill(statusColor(for: parsedValue, target: target))
-                    .frame(width: 8, height: 8)
+                    .fill(statusColor(for: parsedValue, target: target, practical: practical))
+                    .frame(width: 10, height: 10)
                 Text(label)
                 Spacer()
                 NumericTextField(text: text)
@@ -147,13 +182,16 @@ struct TestAdjustView: View {
             }
             .font(.caption2)
             .foregroundStyle(.secondary)
-            .padding(.leading, 18)
+            .padding(.leading, 20)
         }
         .padding(.vertical, 2)
     }
 
-    private func statusColor(for value: Double?, target: ClosedRange<Double>) -> Color {
+    private func statusColor(for value: Double?,
+                             target: ClosedRange<Double>,
+                             practical: ClosedRange<Double>) -> Color {
         guard let v = value else { return Color.gray.opacity(0.25) }
+        if !practical.contains(v) { return .red }
         if target.contains(v) { return .green }
         return .orange
     }
@@ -161,7 +199,7 @@ struct TestAdjustView: View {
     private func computeRecommendations() -> [Recommendation] {
         var out: [Recommendation] = []
 
-        if let v = taValue {
+        if let v = taValue, Formulas.PracticalRange.totalAlkalinity.contains(v) {
             if v < Formulas.TargetRange.totalAlkalinity.lowerBound {
                 let target = Formulas.TargetRange.totalAlkalinity.lowerBound + 10
                 let dose = Formulas.alkalinityRaiseDose(currentTA: v,
@@ -169,7 +207,7 @@ struct TestAdjustView: View {
                                                        gallons: config.gallons)
                 if !dose.isNegligible {
                     out.append(.init(
-                        title: "Raise Alkalinity to \(Int(target)) ppm",
+                        title: "Raises Alkalinity to \(Int(target)) ppm",
                         product: "Sodium bicarbonate (baking soda)",
                         dose: dose,
                         detail: nil))
@@ -181,7 +219,7 @@ struct TestAdjustView: View {
                                                        gallons: config.gallons)
                 if !dose.isNegligible {
                     out.append(.init(
-                        title: "Lower Alkalinity to \(Int(target)) ppm",
+                        title: "Lowers Alkalinity to \(Int(target)) ppm",
                         product: "Muriatic acid (31.45%)",
                         dose: dose,
                         detail: "Aerate the water for several hours after adding."))
@@ -189,13 +227,13 @@ struct TestAdjustView: View {
             }
         }
 
-        if let v = phValue {
+        if let v = phValue, Formulas.PracticalRange.pH.contains(v) {
             if v < Formulas.TargetRange.pHIdeal.lowerBound {
                 let dose = Formulas.pHRaiseDose(currentPH: v, targetPH: 7.5,
                                                gallons: config.gallons)
                 if !dose.isNegligible {
                     out.append(.init(
-                        title: "Raise pH to 7.5",
+                        title: "Raises pH to 7.5",
                         product: PHRaiser.sodaAsh.displayName,
                         dose: dose,
                         detail: nil))
@@ -206,7 +244,7 @@ struct TestAdjustView: View {
                                                product: config.preferredPHLowerer)
                 if !dose.isNegligible {
                     out.append(.init(
-                        title: "Lower pH to 7.5",
+                        title: "Lowers pH to 7.5",
                         product: config.preferredPHLowerer.displayName,
                         dose: dose,
                         detail: nil))
@@ -214,20 +252,24 @@ struct TestAdjustView: View {
             }
         }
 
-        if let v = chValue, v < Formulas.TargetRange.calciumHardness.lowerBound {
+        if let v = chValue,
+           Formulas.PracticalRange.calciumHardness.contains(v),
+           v < Formulas.TargetRange.calciumHardness.lowerBound {
             let target = Formulas.TargetRange.calciumHardness.lowerBound + 25
             let dose = Formulas.calciumRaiseDose(currentCH: v, targetCH: target,
                                                 gallons: config.gallons)
             if !dose.isNegligible {
                 out.append(.init(
-                    title: "Raise Calcium to \(Int(target)) ppm",
+                    title: "Raises Calcium to \(Int(target)) ppm",
                     product: "Calcium chloride",
                     dose: dose,
                     detail: nil))
             }
         }
 
-        if let v = sanitizerValue, v < config.sanitizer.targetRange.lowerBound {
+        if let v = sanitizerValue,
+           config.sanitizer.practicalRange.contains(v),
+           v < config.sanitizer.targetRange.lowerBound {
             let mid = (config.sanitizer.targetRange.lowerBound
                        + config.sanitizer.targetRange.upperBound) / 2
             let dose: Dose
@@ -245,7 +287,7 @@ struct TestAdjustView: View {
             }
             if !dose.isNegligible {
                 out.append(.init(
-                    title: "Raise \(config.sanitizer.displayName) to \(DisplayFormat.oneDecimal(mid)) ppm",
+                    title: "Raises \(config.sanitizer.displayName) to \(DisplayFormat.oneDecimal(mid)) ppm",
                     product: product,
                     dose: dose,
                     detail: nil))
@@ -254,6 +296,65 @@ struct TestAdjustView: View {
 
         return out
     }
+
+    private func computeAdvisories() -> [Advisory] {
+        var out: [Advisory] = []
+
+        var outOfRange: [String] = []
+        if let v = sanitizerValue, !config.sanitizer.practicalRange.contains(v) {
+            outOfRange.append(sanitizerLabel)
+        }
+        if let v = phValue, !Formulas.PracticalRange.pH.contains(v) {
+            outOfRange.append("pH")
+        }
+        if let v = taValue, !Formulas.PracticalRange.totalAlkalinity.contains(v) {
+            outOfRange.append("Alkalinity")
+        }
+        if let v = chValue, !Formulas.PracticalRange.calciumHardness.contains(v) {
+            outOfRange.append("Calcium")
+        }
+
+        if !outOfRange.isEmpty {
+            let names = outOfRange.joined(separator: ", ")
+            out.append(.init(
+                title: "Reading looks off",
+                body: "Recheck \(names) on your test kit. We don't show doses for implausible readings.",
+                kind: .warning))
+        }
+
+        if let v = sanitizerValue,
+           config.sanitizer.practicalRange.contains(v),
+           v > config.sanitizer.targetRange.upperBound {
+            out.append(.init(
+                title: "\(config.sanitizer.displayName) is high",
+                body: "Don't add more sanitizer. Let it dissipate — re-test in a few hours.",
+                kind: .warning))
+        }
+
+        return out
+    }
+}
+
+struct AdvisoryRow: View {
+    let advisory: Advisory
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: "exclamationmark.triangle.fill")
+                .font(.title3)
+                .foregroundStyle(.orange)
+                .frame(width: 24)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(advisory.title)
+                    .font(.headline)
+                Text(advisory.body)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .padding(.vertical, 6)
+    }
 }
 
 struct RecommendationRow: View {
@@ -261,18 +362,24 @@ struct RecommendationRow: View {
     let metric: Bool
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(rec.title)
-                .font(.subheadline.weight(.semibold))
-            HStack(alignment: .firstTextBaseline) {
-                Text(rec.product)
-                    .foregroundStyle(.secondary)
-                Spacer()
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .center, spacing: 12) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(rec.product)
+                        .font(.title3.weight(.semibold))
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text(rec.title)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                Spacer(minLength: 8)
                 Text(rec.dose.formatted(metric: metric))
-                    .font(.body.weight(.semibold))
+                    .font(.system(size: 32, weight: .bold, design: .rounded))
                     .monospacedDigit()
+                    .foregroundStyle(Color.accentColor)
+                    .lineLimit(1)
+                    .fixedSize(horizontal: true, vertical: false)
             }
-            .font(.subheadline)
             if let detail = rec.detail {
                 Text(detail)
                     .font(.caption)

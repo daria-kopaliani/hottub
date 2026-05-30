@@ -42,6 +42,13 @@ enum Formulas {
         static let cyanuricAcid: ClosedRange<Double> = 30.0...50.0
     }
 
+    enum PracticalRange {
+        static let sanitizer: ClosedRange<Double> = 0...20
+        static let pH: ClosedRange<Double> = 0...14
+        static let totalAlkalinity: ClosedRange<Double> = 0...500
+        static let calciumHardness: ClosedRange<Double> = 0...1000
+    }
+
     // MARK: - Sanitizer
 
     static func chlorineDose(
