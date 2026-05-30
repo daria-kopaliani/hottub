@@ -49,39 +49,32 @@ struct AfterUseView: View {
                     Slider(value: $hours, in: 0.25...4.0, step: 0.25)
                 }
             } header: {
-                SectionHeaderLabel(
-                    "How did you use the tub?",
-                    trailing: AnyView(SanitizerPill(sanitizer: config.sanitizer))
-                )
+                SectionHeaderLabel("How did you use the tub?")
             }
 
             Section {
                 DoseHero(product: product,
                          dose: dose,
                          metric: config.useMetric)
-                Text("Run the jets while adding. Re-test sanitizer level after 30–60 minutes.")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
             } header: {
                 SectionHeaderLabel("Add this")
+            } footer: {
+                Text("Run the jets while adding. Re-test sanitizer level after 30–60 minutes.")
+                    .font(.footnote)
             }
 
             if personHours >= 5 {
                 Section {
-                    Label {
-                        Text("Consider a shock cycle if you haven't shocked in the last few days.")
-                    } icon: {
-                        Image(systemName: "bolt.fill")
-                            .foregroundStyle(.orange)
-                    }
-                    .font(.footnote)
+                    AdvisoryRow(advisory: Advisory(
+                        title: "Heavy use",
+                        body: "Consider a shock cycle if you haven't shocked in the last few days.",
+                        kind: .shock))
                 }
             }
         }
         .headerProminence(.increased)
         .navigationTitle("After-Use Dose")
         .navigationBarTitleDisplayMode(.inline)
-        .settingsToolbar()
     }
 }
 

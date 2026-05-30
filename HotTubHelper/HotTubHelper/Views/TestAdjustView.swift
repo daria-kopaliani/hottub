@@ -340,9 +340,9 @@ struct AdvisoryRow: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            Image(systemName: "exclamationmark.triangle.fill")
+            Image(systemName: iconName)
                 .font(.title3)
-                .foregroundStyle(.orange)
+                .foregroundStyle(iconColor)
                 .frame(width: 24)
             VStack(alignment: .leading, spacing: 4) {
                 Text(advisory.title)
@@ -354,6 +354,22 @@ struct AdvisoryRow: View {
             }
         }
         .padding(.vertical, 6)
+    }
+
+    private var iconName: String {
+        switch advisory.kind {
+        case .warning: return "exclamationmark.triangle.fill"
+        case .info: return "info.circle.fill"
+        case .shock: return "bolt.fill"
+        }
+    }
+
+    private var iconColor: Color {
+        switch advisory.kind {
+        case .warning: return .orange
+        case .info: return .blue
+        case .shock: return .pink
+        }
     }
 }
 

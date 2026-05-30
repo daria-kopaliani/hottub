@@ -61,23 +61,26 @@ struct DoseHero: View {
     let product: String
     let dose: Dose
     let metric: Bool
+    var tint: Color = .accentColor
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
+        HStack(alignment: .center, spacing: 12) {
             Text(product)
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-            HStack(alignment: .lastTextBaseline, spacing: 4) {
+                .font(.title3.weight(.semibold))
+                .fixedSize(horizontal: false, vertical: true)
+            Spacer(minLength: 8)
+            HStack(alignment: .lastTextBaseline, spacing: 2) {
                 Text(dose.formattedAmount(metric: metric))
-                    .font(.system(size: 44, weight: .bold, design: .rounded))
+                    .font(.system(size: 32, weight: .bold, design: .rounded))
                     .monospacedDigit()
-                    .foregroundStyle(Color.accentColor)
+                    .foregroundStyle(tint)
                 Text(dose.unitLabel(metric: metric))
-                    .font(.system(size: 24, weight: .semibold, design: .rounded))
-                    .foregroundStyle(Color.accentColor.opacity(0.5))
+                    .font(.system(size: 18, weight: .semibold, design: .rounded))
+                    .foregroundStyle(tint.opacity(0.5))
             }
+            .lineLimit(1)
+            .fixedSize(horizontal: true, vertical: false)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 6)
     }
 }

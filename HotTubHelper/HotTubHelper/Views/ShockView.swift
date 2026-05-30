@@ -19,12 +19,10 @@ struct ShockView: View {
             Section {
                 DoseHero(product: product,
                          dose: dose,
-                         metric: config.useMetric)
+                         metric: config.useMetric,
+                         tint: .pink)
             } header: {
-                SectionHeaderLabel(
-                    "Weekly shock",
-                    trailing: AnyView(SanitizerPill(sanitizer: config.sanitizer))
-                )
+                SectionHeaderLabel("Weekly shock")
             }
 
             Section {
@@ -44,7 +42,6 @@ struct ShockView: View {
         .headerProminence(.increased)
         .navigationTitle("Shock")
         .navigationBarTitleDisplayMode(.inline)
-        .settingsToolbar()
     }
 }
 
@@ -56,9 +53,9 @@ private struct StepRow: View {
         HStack(alignment: .top, spacing: 12) {
             Text("\(number)")
                 .font(.subheadline.weight(.semibold))
-                .foregroundStyle(Color.accentColor)
+                .foregroundStyle(Color.pink)
                 .frame(width: 26, height: 26)
-                .background(Color.accentColor.opacity(0.15))
+                .background(Color.pink.opacity(0.15))
                 .clipShape(Circle())
             Text(text)
                 .font(.subheadline)

@@ -132,7 +132,7 @@ struct Recommendation: Identifiable, Equatable {
 }
 
 struct Advisory: Identifiable, Equatable {
-    enum Kind { case info, warning }
+    enum Kind { case info, warning, shock }
 
     let id = UUID()
     let title: String
