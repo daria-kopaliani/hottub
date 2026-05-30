@@ -57,7 +57,7 @@ struct AfterUseView: View {
                          dose: dose,
                          metric: config.useMetric)
             } header: {
-                SectionHeaderLabel("Add this")
+                SectionHeaderLabel("Chemicals to add")
             } footer: {
                 Text("Run the jets while adding. Re-test sanitizer level after 30–60 minutes.")
                     .font(.footnote)
@@ -67,7 +67,7 @@ struct AfterUseView: View {
                 Section {
                     AdvisoryRow(advisory: Advisory(
                         title: "Heavy use",
-                        body: "Consider a shock cycle if you haven't shocked in the last few days.",
+                        body: "Consider a shock cycle if you haven't run one in the last few days.",
                         kind: .shock))
                 }
             }

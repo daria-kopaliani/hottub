@@ -21,7 +21,7 @@ struct MainView: View {
                         ActionRow(symbol: "person.2.fill",
                                   tint: .orange,
                                   title: "After-Use Dose",
-                                  subtitle: "Sanitizer to add after a soak")
+                                  subtitle: "Top up sanitizer after each use")
                     }
                     NavigationLink {
                         ShockView()
@@ -29,7 +29,7 @@ struct MainView: View {
                         ActionRow(symbol: "bolt.fill",
                                   tint: .pink,
                                   title: "Shock",
-                                  subtitle: "Weekly shock dose")
+                                  subtitle: "Once-a-week treatment")
                     }
                 }
                 Section {

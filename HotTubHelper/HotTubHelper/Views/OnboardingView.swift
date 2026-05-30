@@ -238,8 +238,8 @@ private struct VolumeStep: View {
 
     private var helpText: String {
         config.useMetric
-            ? "Most home hot tubs hold 950–1900 liters. Check the manual or the side of the cabinet."
-            : "Most home hot tubs hold 250–500 gallons. Check the manual or the side of the cabinet."
+            ? "Typical home tubs hold 950–1900 liters. Check your manual or the cabinet label."
+            : "Typical home tubs hold 250–500 gallons. Check your manual or the cabinet label."
     }
 
     private func syncVolumeText() {

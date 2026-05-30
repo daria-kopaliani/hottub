@@ -137,7 +137,7 @@ struct TestAdjustView: View {
                         RecommendationRow(rec: rec, metric: config.useMetric)
                     }
                 } header: {
-                    Text("Add in this order")
+                    Text("Chemicals to add")
                         .textCase(.none)
                         .font(.subheadline.weight(.medium))
                         .foregroundStyle(.primary)
@@ -316,9 +316,10 @@ struct TestAdjustView: View {
 
         if !outOfRange.isEmpty {
             let names = outOfRange.joined(separator: ", ")
+            let isPlural = outOfRange.count > 1
             out.append(.init(
-                title: "Reading looks off",
-                body: "Recheck \(names) on your test kit. We don't show doses for implausible readings.",
+                title: "Re-test \(names)",
+                body: "\(isPlural ? "They're" : "It's") outside the usual range — worth checking your test kit.",
                 kind: .warning))
         }
 

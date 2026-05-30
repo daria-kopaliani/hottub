@@ -21,7 +21,7 @@ struct ShockView: View {
                          dose: dose,
                          metric: config.useMetric)
             } header: {
-                SectionHeaderLabel("Add this")
+                SectionHeaderLabel("Chemicals to add")
             } footer: {
                 Text("Once a week, or after heavy use.")
                     .font(.footnote)
@@ -35,12 +35,12 @@ struct ShockView: View {
                     number: 4,
                     text: config.sanitizer == .chlorine
                         ? "Wait until free chlorine drops below 5 ppm before using the tub."
-                        : "Wait 15 minutes before using the tub."
+                        : "Wait at least 15 minutes before using the tub."
                 )
             } header: {
                 SectionHeaderLabel("How to")
             } footer: {
-                Text("Shock breaks down body oils and frees up bound sanitizer. The water may look cloudy briefly afterward.")
+                Text("Shock breaks down body oils and bound sanitizer. The water may look cloudy briefly.")
                     .font(.footnote)
             }
         }
