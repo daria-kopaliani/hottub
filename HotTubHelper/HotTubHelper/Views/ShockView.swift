@@ -19,10 +19,12 @@ struct ShockView: View {
             Section {
                 DoseHero(product: product,
                          dose: dose,
-                         metric: config.useMetric,
-                         tint: .pink)
+                         metric: config.useMetric)
             } header: {
-                SectionHeaderLabel("Weekly shock")
+                SectionHeaderLabel("Add this")
+            } footer: {
+                Text("Once a week, or after heavy use.")
+                    .font(.footnote)
             }
 
             Section {
@@ -37,6 +39,9 @@ struct ShockView: View {
                 )
             } header: {
                 SectionHeaderLabel("How to")
+            } footer: {
+                Text("Shock breaks down body oils and frees up bound sanitizer. The water may look cloudy briefly afterward.")
+                    .font(.footnote)
             }
         }
         .headerProminence(.increased)
@@ -50,15 +55,16 @@ private struct StepRow: View {
     let text: String
 
     var body: some View {
-        HStack(alignment: .top, spacing: 12) {
+        HStack(alignment: .firstTextBaseline, spacing: 12) {
             Text("\(number)")
                 .font(.subheadline.weight(.semibold))
-                .foregroundStyle(Color.pink)
+                .foregroundStyle(Color.accentColor)
                 .frame(width: 26, height: 26)
-                .background(Color.pink.opacity(0.15))
+                .background(Color.accentColor.opacity(0.15))
                 .clipShape(Circle())
+                .alignmentGuide(.firstTextBaseline) { d in d[VerticalAlignment.center] + 6 }
             Text(text)
-                .font(.subheadline)
+                .font(.body)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(.vertical, 4)
