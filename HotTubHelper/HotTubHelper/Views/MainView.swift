@@ -32,11 +32,20 @@ struct MainView: View {
                                   subtitle: "Weekly shock dose")
                     }
                 }
+                Section {
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        ActionRow(symbol: "gearshape.fill",
+                                  tint: .gray,
+                                  title: "Settings",
+                                  subtitle: "Volume, sanitizer, products")
+                    }
+                }
             }
             .headerProminence(.increased)
             .contentMargins(.top, 24, for: .scrollContent)
             .navigationTitle("Hot Tub Helper")
-            .settingsToolbar()
         }
     }
 }
@@ -48,22 +57,22 @@ private struct ActionRow: View {
     let subtitle: String
 
     var body: some View {
-        HStack(spacing: 14) {
+        HStack(spacing: 16) {
             Image(systemName: symbol)
-                .font(.title3)
-                .frame(width: 38, height: 38)
+                .font(.title2)
+                .frame(width: 48, height: 48)
                 .foregroundStyle(tint)
                 .background(tint.opacity(0.15))
-                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-            VStack(alignment: .leading, spacing: 2) {
+                .clipShape(Circle())
+            VStack(alignment: .leading, spacing: 4) {
                 Text(title)
-                    .font(.headline)
+                    .font(.title3.weight(.semibold))
                 Text(subtitle)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
         }
-        .padding(.vertical, 6)
+        .padding(.vertical, 12)
     }
 }
 

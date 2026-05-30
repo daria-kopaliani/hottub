@@ -2,7 +2,6 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var config: HotTubConfig
-    @Environment(\.dismiss) private var dismiss
     @State private var volumeText: String = ""
     @State private var suppressNextSave: Bool = false
     @FocusState private var volumeFocused: Bool
@@ -88,11 +87,6 @@ struct SettingsView: View {
         .headerProminence(.increased)
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("Done") { dismiss() }
-            }
-        }
     }
 
     private func syncVolumeText() {
