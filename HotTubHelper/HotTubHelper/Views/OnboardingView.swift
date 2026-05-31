@@ -231,9 +231,6 @@ private struct VolumeStep: View {
                 .font(.footnote)
                 .foregroundStyle(.secondary)
         }
-        .onAppear {
-            if !volumeFocused { volumeFocused = true }
-        }
     }
 
     private var helpText: String {
