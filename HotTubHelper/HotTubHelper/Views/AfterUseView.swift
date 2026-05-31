@@ -3,8 +3,8 @@ import SwiftUI
 struct AfterUseView: View {
     @EnvironmentObject var config: HotTubConfig
 
-    @State private var people: Int = 2
-    @State private var hours: Double = 1.0
+    @State private var people: Int = 3
+    @State private var hours: Double = 1.5
 
     var dose: Dose {
         Formulas.afterUseDose(
