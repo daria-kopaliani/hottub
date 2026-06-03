@@ -8,6 +8,9 @@ struct TestAdjustView: View {
     @State private var taText: String = ""
     @State private var chText: String = ""
 
+    private enum Field: Hashable { case sanitizer, ph, ta, ch }
+    @FocusState private var focusedField: Field?
+
     private var sanitizerValue: Double? { NumericInput.parse(sanitizerText) }
     private var phValue: Double? { NumericInput.parse(phText) }
     private var taValue: Double? { NumericInput.parse(taText) }
@@ -34,7 +37,8 @@ struct TestAdjustView: View {
                            parsedValue: sanitizerValue,
                            target: config.sanitizer.targetRange,
                            practical: config.sanitizer.practicalRange,
-                           rangeText: DisplayFormat.rangeOneDecimal(config.sanitizer.targetRange))
+                           rangeText: DisplayFormat.rangeOneDecimal(config.sanitizer.targetRange),
+                           field: .sanitizer)
                     .task {
                         if CommandLine.arguments.contains("-UITestSampleReadings") {
                             let sep = Locale.current.decimalSeparator ?? "."
@@ -50,21 +54,24 @@ struct TestAdjustView: View {
                            parsedValue: phValue,
                            target: Formulas.TargetRange.pH,
                            practical: Formulas.PracticalRange.pH,
-                           rangeText: DisplayFormat.rangeOneDecimal(Formulas.TargetRange.pH))
+                           rangeText: DisplayFormat.rangeOneDecimal(Formulas.TargetRange.pH),
+                           field: .ph)
                 readingRow(label: "Alkalinity",
                            unit: "ppm",
                            text: $taText,
                            parsedValue: taValue,
                            target: Formulas.TargetRange.totalAlkalinity,
                            practical: Formulas.PracticalRange.totalAlkalinity,
-                           rangeText: DisplayFormat.rangeInteger(Formulas.TargetRange.totalAlkalinity))
+                           rangeText: DisplayFormat.rangeInteger(Formulas.TargetRange.totalAlkalinity),
+                           field: .ta)
                 readingRow(label: "Calcium",
                            unit: "ppm",
                            text: $chText,
                            parsedValue: chValue,
                            target: Formulas.TargetRange.calciumHardness,
                            practical: Formulas.PracticalRange.calciumHardness,
-                           rangeText: DisplayFormat.rangeInteger(Formulas.TargetRange.calciumHardness))
+                           rangeText: DisplayFormat.rangeInteger(Formulas.TargetRange.calciumHardness),
+                           field: .ch)
             } header: {
                 Text("Your readings")
                     .textCase(.none)
@@ -156,7 +163,8 @@ struct TestAdjustView: View {
                             parsedValue: Double?,
                             target: ClosedRange<Double>,
                             practical: ClosedRange<Double>,
-                            rangeText: String) -> some View {
+                            rangeText: String,
+                            field: Field) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(spacing: 10) {
                 Circle()
@@ -165,6 +173,7 @@ struct TestAdjustView: View {
                 Text(label)
                 Spacer()
                 NumericTextField(text: text)
+                    .focused($focusedField, equals: field)
                     .frame(width: 70)
                 if let unit {
                     Text(unit)
@@ -185,6 +194,8 @@ struct TestAdjustView: View {
             .padding(.leading, 20)
         }
         .padding(.vertical, 2)
+        .contentShape(Rectangle())
+        .onTapGesture { focusedField = field }
     }
 
     private func statusColor(for value: Double?,
