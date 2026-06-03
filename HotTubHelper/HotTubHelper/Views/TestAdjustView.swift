@@ -84,6 +84,7 @@ struct TestAdjustView: View {
         .headerProminence(.increased)
         .navigationTitle("Test & Adjust")
         .navigationBarTitleDisplayMode(.large)
+        .onTapGesture { focusedField = nil }
     }
 
     private var sanitizerLabel: String {
