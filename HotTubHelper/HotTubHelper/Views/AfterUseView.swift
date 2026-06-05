@@ -42,7 +42,7 @@ struct AfterUseView: View {
                     HStack {
                         Text("Hours")
                         Spacer()
-                        Text(String(format: "%.1f", hours))
+                        Text(hours.formatted(.number.precision(.fractionLength(1))))
                             .monospacedDigit()
                             .foregroundStyle(.secondary)
                     }

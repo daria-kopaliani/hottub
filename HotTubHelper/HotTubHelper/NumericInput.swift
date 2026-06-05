@@ -108,7 +108,7 @@ struct SectionHeaderLabel: View {
 
 enum DisplayFormat {
     static func oneDecimal(_ v: Double) -> String {
-        String(format: "%.1f", v)
+        v.formatted(.number.precision(.fractionLength(1)))
     }
 
     static func integer(_ v: Double) -> String {
