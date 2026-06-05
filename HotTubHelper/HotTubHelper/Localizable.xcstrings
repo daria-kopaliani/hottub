@@ -327,7 +327,7 @@
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Hot Tub Assistant" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Asistente para Jacuzzi" } },
         "fr" : { "stringUnit" : { "state" : "translated", "value" : "Assistant Spa" } },
-        "it" : { "stringUnit" : { "state" : "translated", "value" : "Assistente Idromassaggio" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Assistente Spa" } },
         "ja" : { "stringUnit" : { "state" : "translated", "value" : "ジャグジー アシスタント" } }
       }
     },
