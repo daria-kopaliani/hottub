@@ -407,6 +407,88 @@ func screenshotsForLocale(_ loc: LocalizationInfo, dryRun: Bool) {
     }
 }
 
+// MARK: - Listing text upload
+
+func readListingFile(lang: String, field: String) -> String? {
+    let path = "listings/\(lang)-\(field).txt"
+    return try? String(contentsOf: URL(fileURLWithPath: path), encoding: .utf8)
+}
+
+struct AppInfoLoc {
+    let id: String
+    let locale: String
+}
+
+func findEditableAppInfoID(appID: String) -> String {
+    let (status, body) = ascRequest(
+        method: "GET",
+        path: "/v1/apps/\(appID)/appInfos",
+        jwt: jwt,
+        query: ["fields[appInfos]": "appStoreState"]
+    )
+    guard status == 200,
+          let json = try? JSONSerialization.jsonObject(with: body) as? [String: Any],
+          let data = json["data"] as? [[String: Any]] else {
+        printJSON(body); die("Failed to list appInfos: HTTP \(status)")
+    }
+    for item in data {
+        if let id = item["id"] as? String,
+           let attrs = item["attributes"] as? [String: Any],
+           let state = attrs["appStoreState"] as? String,
+           state != "READY_FOR_SALE" {
+            return id
+        }
+    }
+    if let id = data.first?["id"] as? String { return id }
+    die("No editable appInfo found")
+}
+
+func listAppInfoLocalizations(appInfoID: String) -> [AppInfoLoc] {
+    let (status, body) = ascRequest(
+        method: "GET",
+        path: "/v1/appInfos/\(appInfoID)/appInfoLocalizations",
+        jwt: jwt,
+        query: ["fields[appInfoLocalizations]": "locale", "limit": "50"]
+    )
+    guard status == 200,
+          let json = try? JSONSerialization.jsonObject(with: body) as? [String: Any],
+          let data = json["data"] as? [[String: Any]] else {
+        printJSON(body); die("Failed to list appInfoLocalizations: HTTP \(status)")
+    }
+    return data.compactMap { item -> AppInfoLoc? in
+        guard let id = item["id"] as? String,
+              let attrs = item["attributes"] as? [String: Any],
+              let locale = attrs["locale"] as? String else { return nil }
+        return AppInfoLoc(id: id, locale: locale)
+    }
+}
+
+func patchAppInfoLocalization(id: String, attributes: [String: String]) {
+    let payload: [String: Any] = [
+        "data": [
+            "type": "appInfoLocalizations",
+            "id": id,
+            "attributes": attributes
+        ]
+    ]
+    let body = try! JSONSerialization.data(withJSONObject: payload)
+    let (status, resp) = ascRequest(method: "PATCH", path: "/v1/appInfoLocalizations/\(id)", jwt: jwt, body: body)
+    guard status == 200 else { printJSON(resp); die("PATCH appInfoLocalization \(id) failed: HTTP \(status)") }
+}
+
+func patchVersionLocalization(id: String, attributes: [String: String]) {
+    let payload: [String: Any] = [
+        "data": [
+            "type": "appStoreVersionLocalizations",
+            "id": id,
+            "attributes": attributes
+        ]
+    ]
+    let body = try! JSONSerialization.data(withJSONObject: payload)
+    let (status, resp) = ascRequest(method: "PATCH", path: "/v1/appStoreVersionLocalizations/\(id)", jwt: jwt, body: body)
+    guard status == 200 else { printJSON(resp); die("PATCH appStoreVersionLocalization \(id) failed: HTTP \(status)") }
+}
+
 // MARK: - Subcommands
 
 switch subcommand {
@@ -463,6 +545,60 @@ case "upload-screenshots":
     }
     for loc in filtered.sorted(by: { $0.locale < $1.locale }) {
         screenshotsForLocale(loc, dryRun: dryRun)
+    }
+
+case "upload-listing":
+    guard CommandLine.arguments.count >= 3 else { die("Usage: upload-listing <bundleId> [--dry-run] [--only <locale>]") }
+    let bundleID = CommandLine.arguments[2]
+    let dryRun = CommandLine.arguments.contains("--dry-run")
+    var onlyLocale: String? = nil
+    if let i = CommandLine.arguments.firstIndex(of: "--only"),
+       i + 1 < CommandLine.arguments.count {
+        onlyLocale = CommandLine.arguments[i + 1]
+    }
+
+    let version = findVersionInPrep(bundleID: bundleID)
+    print("Found app=\(version.appID) version=\(version.versionString) (\(version.versionID))")
+    print(dryRun ? "MODE: DRY RUN" : "MODE: LIVE (PATCHes ASC localizations)")
+
+    let appInfoID = findEditableAppInfoID(appID: version.appID)
+    print("Editable appInfo: \(appInfoID)")
+
+    let appInfoLocs = listAppInfoLocalizations(appInfoID: appInfoID)
+    let versionLocs = listLocalizations(versionID: version.versionID)
+
+    let allLocales = Set(appInfoLocs.map { $0.locale }).union(versionLocs.map { $0.locale }).sorted()
+    let target = onlyLocale.map { o in allLocales.filter { $0 == o } } ?? allLocales
+    if let o = onlyLocale { print("Filtering to locale=\(o)") }
+
+    for locale in target {
+        let lang = localeToDir(locale)
+        print("---")
+        print("[\(locale)] ← listings/\(lang)-*.txt")
+
+        // Page 1: name + subtitle → appInfoLocalization
+        var infoAttrs: [String: String] = [:]
+        if let name = readListingFile(lang: lang, field: "name") { infoAttrs["name"] = name }
+        if let subtitle = readListingFile(lang: lang, field: "subtitle") { infoAttrs["subtitle"] = subtitle }
+        if !infoAttrs.isEmpty,
+           let infoLoc = appInfoLocs.first(where: { $0.locale == locale }) {
+            print("  → appInfoLocalization \(infoLoc.id):")
+            for (k, v) in infoAttrs { print("    \(k) (\(v.count) chars)") }
+            if !dryRun { patchAppInfoLocalization(id: infoLoc.id, attributes: infoAttrs) }
+        }
+
+        // Page 2: description + keywords + promotionalText + whatsNew → appStoreVersionLocalization
+        var verAttrs: [String: String] = [:]
+        if let desc = readListingFile(lang: lang, field: "description") { verAttrs["description"] = desc }
+        if let kw = readListingFile(lang: lang, field: "keywords") { verAttrs["keywords"] = kw }
+        if let promo = readListingFile(lang: lang, field: "promo") { verAttrs["promotionalText"] = promo }
+        if let wn = readListingFile(lang: lang, field: "whats-new") { verAttrs["whatsNew"] = wn }
+        if !verAttrs.isEmpty,
+           let verLoc = versionLocs.first(where: { $0.locale == locale }) {
+            print("  → appStoreVersionLocalization \(verLoc.id):")
+            for (k, v) in verAttrs { print("    \(k) (\(v.count) chars)") }
+            if !dryRun { patchVersionLocalization(id: verLoc.id, attributes: verAttrs) }
+        }
     }
 
 default:
