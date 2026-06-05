@@ -4,6 +4,12 @@
     "%@ is high" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ist zu hoch"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15,6 +21,12 @@
     "Add in the order shown. Wait at least 4 hours between major adjustments and re-test." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In der gezeigten Reihenfolge zugeben. Zwischen größeren Anpassungen mindestens 4 Stunden warten und erneut testen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -26,6 +38,12 @@
     "Add the shock with the jets running for at least 15 minutes." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stoßmittel bei laufenden Düsen mindestens 15 Minuten zugeben."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -37,6 +55,12 @@
     "Aerate the water for several hours after adding." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wasser nach der Zugabe mehrere Stunden belüften."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -48,6 +72,12 @@
     "After-Use Dose" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dosis nach Benutzung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -59,6 +89,12 @@
     "Alkalinity" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alkalität"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -70,6 +106,12 @@
     "Back" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zurück"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -81,6 +123,12 @@
     "Bromine" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brom"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -92,6 +140,12 @@
     "Bromine (ppm)" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brom (ppm)"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -103,6 +157,12 @@
     "Cal-hypo 68%" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calciumhypochlorit 68%"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -114,6 +174,12 @@
     "Calcium" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calcium"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -125,6 +191,12 @@
     "Calcium chloride" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calciumchlorid"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -136,6 +208,12 @@
     "Change units" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einheiten ändern"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -147,6 +225,12 @@
     "Chemicals to add" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zu dosieren"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -158,6 +242,12 @@
     "Chlorine" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chlor"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -169,6 +259,12 @@
     "Chlorine product" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chlorprodukt"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -180,6 +276,12 @@
     "Chlorine target is 1–3 ppm." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chlor-Zielwert ist 1–3 ppm."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -191,6 +293,12 @@
     "Consider a shock cycle if you haven't run one in the last few days." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erwäge eine Stoßbehandlung, falls in den letzten Tagen keine erfolgt ist."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -202,6 +310,12 @@
     "Dichlor 56%" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dichlor 56%"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -213,6 +327,12 @@
     "Don't add more sanitizer. Let it dissipate — re-test in a few hours." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine weitere Desinfektion zugeben. Werte sinken lassen — in ein paar Stunden erneut testen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -224,6 +344,12 @@
     "Dry acid" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trockensäure"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -235,6 +361,12 @@
     "Enter at least one reading above to see adjustments." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gib oben mindestens einen Wert ein, um Anpassungen zu sehen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -246,6 +378,12 @@
     "Enter test readings, get exact doses" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Werte eingeben, exakte Dosen erhalten"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -257,6 +395,12 @@
     "FC (ppm)" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FC (ppm)"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -268,6 +412,12 @@
     "Free Chlorine" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Freies Chlor"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -279,6 +429,12 @@
     "gallons" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gallonen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -290,6 +446,12 @@
     "Get started" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loslegen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -301,6 +463,12 @@
     "Heads up" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achtung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -312,6 +480,12 @@
     "Heavy use" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starke Nutzung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -323,6 +497,12 @@
     "Hot Tub Assistant" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whirlpool-Assistent"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -334,6 +514,12 @@
     "Hours" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stunden"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -345,6 +531,12 @@
     "How did you use the tub?" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie wurde der Whirlpool genutzt?"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -356,6 +548,12 @@
     "How to" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anleitung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -367,6 +565,12 @@
     "Imperial" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imperial"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -378,6 +582,12 @@
     "Leave the cover off for 20–30 minutes before closing." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abdeckung 20–30 Minuten offen lassen, bevor du sie schließt."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -389,6 +599,12 @@
     "Liquid chlorine 12.5%" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chlorbleichlauge 12,5%"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -400,6 +616,12 @@
     "liters" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liter"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -411,6 +633,12 @@
     "Looking good." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sieht gut aus."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -422,6 +650,12 @@
     "Lowers Alkalinity to %lld ppm" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Senkt Alkalität auf %lld ppm"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -433,6 +667,12 @@
     "Lowers pH to 7.5" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Senkt pH auf 7,5"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -444,6 +684,12 @@
     "Metric" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metrisch"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -455,6 +701,12 @@
     "Most hot tubs use bromine. Target 2–4 ppm." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die meisten Whirlpools nutzen Brom. Zielwert 2–4 ppm."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -466,6 +718,12 @@
     "Muriatic acid" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salzsäure"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -477,6 +735,12 @@
     "Muriatic acid (31.45%)" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salzsäure (31,45%)"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -488,6 +752,12 @@
     "Next" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weiter"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -499,6 +769,12 @@
     "Non-chlorine shock (MPS)" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivsauerstoff (MPS)"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -510,6 +786,12 @@
     "Nothing to add right now." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nichts hinzuzufügen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -521,6 +803,12 @@
     "Once a week, or after heavy use." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einmal pro Woche oder nach starker Nutzung."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -532,6 +820,12 @@
     "Once-a-week treatment" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wöchentliche Behandlung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -543,6 +837,12 @@
     "Outside the usual range — worth checking your test kit." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Außerhalb des üblichen Bereichs — prüfe dein Testkit."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -554,6 +854,12 @@
     "People" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -565,6 +871,12 @@
     "pH" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pH"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -576,6 +888,12 @@
     "pH lowerer" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pH-Senker"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -587,6 +905,12 @@
     "Pick what's on your shelf — we'll size doses to match." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle, was du da hast — wir passen die Dosen an."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -598,6 +922,12 @@
     "ppm" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ppm"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -609,6 +939,12 @@
     "Preferred chemicals" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bevorzugte Chemikalien"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -620,6 +956,12 @@
     "Privacy policy" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datenschutz"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -631,6 +973,12 @@
     "Raises %@ to %@ ppm" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erhöht %1$@ auf %2$@ ppm"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -642,6 +990,12 @@
     "Raises Alkalinity to %lld ppm" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erhöht Alkalität auf %lld ppm"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -653,6 +1007,12 @@
     "Raises Calcium to %lld ppm" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erhöht Calcium auf %lld ppm"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -664,6 +1024,12 @@
     "Raises pH to 7.5" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erhöht pH auf 7,5"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -675,6 +1041,12 @@
     "Re-test %@" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ erneut testen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -686,6 +1058,12 @@
     "Remove the cover and run the jets." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abdeckung entfernen und Düsen einschalten."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -697,6 +1075,12 @@
     "Run the jets while adding. Re-test sanitizer level after 30–60 minutes." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Düsen beim Zugeben laufen lassen. Desinfektion nach 30–60 Minuten erneut testen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -708,6 +1092,12 @@
     "Sanitizer" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desinfektionsmittel"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -719,6 +1109,12 @@
     "Sets the target range we'll aim for." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bestimmt den Zielbereich für die Werte."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -730,6 +1126,12 @@
     "Settings" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -741,6 +1143,12 @@
     "Shock" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stoßbehandlung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -752,6 +1160,12 @@
     "Shock breaks down body oils and bound sanitizer. The water may look cloudy briefly." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Stoßbehandlung baut Körperöle und gebundene Desinfektion ab. Das Wasser kann kurz trüb wirken."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -763,6 +1177,12 @@
     "So doses match the products you have." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Damit die Dosen zu deinen Produkten passen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -774,6 +1194,12 @@
     "Soda ash" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Natriumcarbonat"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -785,6 +1211,12 @@
     "Sodium bicarbonate (baking soda)" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Natriumhydrogencarbonat (Natron)"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -796,6 +1228,12 @@
     "Sodium bromide" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Natriumbromid"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -807,6 +1245,12 @@
     "Step %lld of %lld" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schritt %1$lld von %2$lld"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -818,6 +1262,12 @@
     "Support" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -829,6 +1279,12 @@
     "Target" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ziel"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -840,6 +1296,12 @@
     "Test & Adjust" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Testen & Anpassen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -851,6 +1313,12 @@
     "Top up sanitizer after each use" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desinfektion nach jeder Nutzung auffüllen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -862,6 +1330,12 @@
     "Typical home tubs hold 250–500 gallons. Check your manual or the cabinet label." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übliche Whirlpools fassen 250–500 Gallonen. Schau ins Handbuch oder aufs Typenschild."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -873,6 +1347,12 @@
     "Typical home tubs hold 950–1900 liters. Check your manual or the cabinet label." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übliche Whirlpools fassen 950–1900 Liter. Schau ins Handbuch oder aufs Typenschild."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -884,6 +1364,12 @@
     "Units" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einheiten"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -895,6 +1381,12 @@
     "v%@" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v%@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -906,6 +1398,12 @@
     "Volume" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volumen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -917,6 +1415,12 @@
     "Volume, sanitizer, products" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volumen, Desinfektion, Produkte"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -928,6 +1432,12 @@
     "Wait at least 15 minutes before using the tub." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mindestens 15 Minuten warten, bevor du den Whirlpool nutzt."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -939,6 +1449,12 @@
     "Wait until free chlorine drops below 5 ppm before using the tub." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warten, bis das freie Chlor unter 5 ppm fällt, bevor du den Whirlpool nutzt."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -950,6 +1466,12 @@
     "We use this to size your doses." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Damit berechnen wir die richtige Dosis."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -961,6 +1483,12 @@
     "What sanitizer does your tub use?" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welches Desinfektionsmittel verwendest du?"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -972,6 +1500,12 @@
     "What's the volume of your hot tub?" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie viel Wasser fasst dein Whirlpool?"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -983,6 +1517,12 @@
     "Which chemicals do you use?" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Chemikalien verwendest du?"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -994,6 +1534,12 @@
     "You can change all answers later in Settings." : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du kannst alle Antworten später in den Einstellungen ändern."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1005,6 +1551,12 @@
     "Your hot tub" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Whirlpool"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1016,6 +1568,12 @@
     "Your readings" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Werte"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
