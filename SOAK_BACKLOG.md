@@ -1,6 +1,6 @@
 # Soak — Backlog
 
-Living engineering planning surface for Soak v1.1+. Pairs with [`SOAK_RESEARCH.md`](SOAK_RESEARCH.md) (product / market snapshot from the retroactive Pass-1 sweep). Structure convention documented in [`SPEC.md`](../SPEC.md) "Feature backlog".
+Living engineering planning surface for Soak v1.1+. Pairs with [`SOAK_RESEARCH.md`](SOAK_RESEARCH.md) (product / market snapshot from the retroactive Pass-1 sweep). Structure convention documented in [`SPEC.md`](../../SPEC.md) "Feature backlog".
 
 ## Shipped
 
@@ -20,8 +20,8 @@ Single biggest revenue lever for a shipped indie iOS utility per the 2025–2026
 **In:**
 - All user-facing UI strings in Soak.app extracted to a String Catalog (`Localizable.xcstrings`)
 - 5 languages: **DE, ES, FR, IT, JA**
-- App Store Connect localized metadata per language: subtitle (≤30 chars), promotional text (≤170), description (~280 words per the [`LISTING_PROMPTS.md`](../LISTING_PROMPTS.md) 7-block structure), keywords (≤100 chars no spaces)
-- Regenerated screenshots per language using the [`SCREENSHOT_PROMPTS.md`](../SCREENSHOT_PROMPTS.md) 4-shot plan: iPhone 6.9" + iPad 13" × 4 shots × 5 languages = 40 PNGs
+- App Store Connect localized metadata per language: subtitle (≤30 chars), promotional text (≤170), description (~280 words per the [`LISTING_PROMPTS.md`](../../LISTING_PROMPTS.md) 7-block structure), keywords (≤100 chars no spaces)
+- Regenerated screenshots per language using the [`SCREENSHOT_PROMPTS.md`](../../SCREENSHOT_PROMPTS.md) 4-shot plan: iPhone 6.9" + iPad 13" × 4 shots × 5 languages = 40 PNGs
 - Localized "What's New" v1.1 copy per language
 - String Catalog plural-rule handling where relevant ("person" / "people", "session" / "sessions")
 
@@ -53,13 +53,13 @@ Single biggest revenue lever for a shipped indie iOS utility per the 2025–2026
 
 **App Store Connect metadata workflow:**
 - 5 languages × (subtitle + promo + description + keywords + What's New) = 25 metadata entries.
-- Per [`LISTING_PROMPTS.md`](../LISTING_PROMPTS.md) structure: keywords field is comma-separated no spaces; description is the 7-block hooked structure (~280 words); subtitle ≤30 chars; promo ≤170; "What's New" is per-version localized copy.
+- Per [`LISTING_PROMPTS.md`](../../LISTING_PROMPTS.md) structure: keywords field is comma-separated no spaces; description is the 7-block hooked structure (~280 words); subtitle ≤30 chars; promo ≤170; "What's New" is per-version localized copy.
 - Use the `pbcopy` clipboard delivery flow per `SPEC.md` Submit Sequence — each localized field gets written to `listing-{lang}.txt` first, then `pbcopy < file` to preserve paragraph breaks.
 
 **Screenshot regeneration:**
 - 4 shots × 2 devices × 5 languages = **40 PNGs**.
 - Re-use the captured PNGs from initial v1.0 submission (the *content* in dark mode at 9:41 doesn't change). Only the caption-text overlay differs.
-- If Soak's screenshots were composed in Figma per [`SCREENSHOT_PROMPTS.md`](../SCREENSHOT_PROMPTS.md), duplicate the source file 5 times and swap the caption text per language. If composed via a screenshot tool (Picasso / AppMockUp), follow that tool's localization export flow.
+- If Soak's screenshots were composed in Figma per [`SCREENSHOT_PROMPTS.md`](../../SCREENSHOT_PROMPTS.md), duplicate the source file 5 times and swap the caption text per language. If composed via a screenshot tool (Picasso / AppMockUp), follow that tool's localization export flow.
 - Caption translations: use the same DeepL / Claude split as in-app strings. Verify ≤55 chars per language (caption length budget per `SCREENSHOT_PROMPTS.md`); German captions may need rephrasing if 30%-expansion blows the budget.
 
 ### Open questions
@@ -98,10 +98,10 @@ Build Soak v1.1: localization to 5 languages (DE, ES, FR, IT, JA) for the live S
 Read these first, in order, before doing anything else:
 1. /Users/dariakopaliani/Projects/moondog/SPEC.md — Moon Dog portfolio + conventions. Especially "Feature backlog" (how this workflow is structured), "Submit sequence" (App Store metadata + clipboard delivery), and Conventions (iOS 17 deployment, git identity override, encryption Info.plist flag, screenshot dimensions).
 2. /Users/dariakopaliani/.claude/projects/-Users-dariakopaliani-Projects-moondog/memory/MEMORY.md plus every file it links to — Daria's preferences, work patterns, and feedback memories. Especially "Propose before changing code", "Let Daria pace the ship flow", "Commit scope", "Hot Tub git identity".
-3. /Users/dariakopaliani/Projects/moondog/soak/SOAK_BACKLOG.md — this file. The "Up next: v1.1 Localization" section IS the spec. Read all of it. Why / Scope / Approach / Open questions / Definition of done.
-4. /Users/dariakopaliani/Projects/moondog/soak/SOAK_RESEARCH.md — Soak's audience / chemistry / competing-apps context. Useful for advisory-tone calibration during translation review.
+3. /Users/dariakopaliani/Projects/moondog/apps/soak/SOAK_BACKLOG.md — this file. The "Up next: v1.1 Localization" section IS the spec. Read all of it. Why / Scope / Approach / Open questions / Definition of done.
+4. /Users/dariakopaliani/Projects/moondog/apps/soak/SOAK_RESEARCH.md — Soak's audience / chemistry / competing-apps context. Useful for advisory-tone calibration during translation review.
 5. /Users/dariakopaliani/Projects/moondog/LISTING_PROMPTS.md, SCREENSHOT_PROMPTS.md, ICON_PROMPTS.md — ship-prep reusable patterns. App Store metadata localization uses LISTING_PROMPTS' 7-block structure per language; screenshot regeneration uses SCREENSHOT_PROMPTS' 4-shot pattern per language.
-6. /Users/dariakopaliani/Projects/moondog/soak/HOW_WE_WORK.md — Soak's project-level working rules.
+6. /Users/dariakopaliani/Projects/moondog/apps/soak/HOW_WE_WORK.md — Soak's project-level working rules.
 
 Then do these four steps, in order, stopping after each for Daria to direct you:
 
@@ -109,7 +109,7 @@ Step 1 — Resolve the open questions.
 The "Open questions" subsection of SOAK_BACKLOG.md Up-Next has 5 items (JA translation method, DE volume defaults, What's-new copy template, subtitle re-translation strategy, privacy policy URL). Surface each in chat with my recommendation and any alternatives; wait for Daria's lock-in on each before proceeding.
 
 Step 2 — Extract strings.
-Audit every user-facing literal in /Users/dariakopaliani/Projects/moondog/soak/HotTubHelper/HotTubHelper/. Files to sweep: Models.swift, Formulas.swift (only displayName-style literals if any), HotTubConfig.swift, ContentView.swift, NumericInput.swift, SettingsToolbar.swift, and every file in Views/. Catalog every string in a proposal to Daria (in chat) before creating Localizable.xcstrings — she should see the full string set before any code change. Pay particular attention to advisory-body strings in TestAdjustView (multi-sentence), recommendation titles ("Raises Alkalinity to X ppm" — has a number interpolation that needs proper format-arg in xcstrings), and onboarding help strings (multi-line, length-sensitive).
+Audit every user-facing literal in /Users/dariakopaliani/Projects/moondog/apps/soak/HotTubHelper/HotTubHelper/. Files to sweep: Models.swift, Formulas.swift (only displayName-style literals if any), HotTubConfig.swift, ContentView.swift, NumericInput.swift, SettingsToolbar.swift, and every file in Views/. Catalog every string in a proposal to Daria (in chat) before creating Localizable.xcstrings — she should see the full string set before any code change. Pay particular attention to advisory-body strings in TestAdjustView (multi-sentence), recommendation titles ("Raises Alkalinity to X ppm" — has a number interpolation that needs proper format-arg in xcstrings), and onboarding help strings (multi-line, length-sensitive).
 
 Step 3 — Scaffold + translate (only after Daria's "go").
 Per the "Propose before changing code" feedback: present the file diff for Localizable.xcstrings + the source-file edits (Text("key") replacements) before applying. Once go:
@@ -125,8 +125,8 @@ After in-app localization is verified in simulator (all 5 languages):
 - Use LISTING_PROMPTS.md 7-block description structure per language. Translate the existing EN Soak listing (subtitle, promo text, description, keywords, What's New) into 5 languages. Use the same DeepL / Claude split as in-app strings.
 - Subtitle per locale targets locale-specific search terms (function-first, not literal-EN translation). Reference top App Store hot-tub-app subtitles per locale for keyword ideas.
 - Keywords field per locale is comma-separated no spaces. Each locale gets a fresh 100-char budget — no need to repeat words from that locale's subtitle.
-- Write each localized field to /Users/dariakopaliani/Projects/moondog/soak/listing-{lang}-{field}.txt, then pbcopy per the SPEC Submit-Sequence Delivery Flow when Daria asks for each field to paste.
-- Regenerate screenshots: 4 shots × 2 devices × 5 languages = 40 PNGs. Re-use the dark-mode 9:41 captures from v1.0 if available in /Users/dariakopaliani/Projects/moondog/soak/screenshots/. Translate captions per language; verify ≤55 chars per language. Per SCREENSHOT_PROMPTS the screen content doesn't change — only the caption overlay differs per language.
+- Write each localized field to /Users/dariakopaliani/Projects/moondog/apps/soak/listing-{lang}-{field}.txt, then pbcopy per the SPEC Submit-Sequence Delivery Flow when Daria asks for each field to paste.
+- Regenerate screenshots: 4 shots × 2 devices × 5 languages = 40 PNGs. Re-use the dark-mode 9:41 captures from v1.0 if available in /Users/dariakopaliani/Projects/moondog/apps/soak/screenshots/. Translate captions per language; verify ≤55 chars per language. Per SCREENSHOT_PROMPTS the screen content doesn't change — only the caption overlay differs per language.
 - Final pass: each locale's listing preview compared side-by-side with a top competitor in that locale at App Store search-results size.
 
 Conventions to follow throughout (full list in SPEC.md, key ones again):
