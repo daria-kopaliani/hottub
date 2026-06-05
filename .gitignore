@@ -40,3 +40,6 @@ playground.xcworkspace
 .env
 .env.*
 !.env.example
+
+# Output of scripts/check_reviews.py
+reviews.json
