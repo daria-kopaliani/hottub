@@ -1,0 +1,20 @@
+Pay once. No subscription, no ads, no account. Works offline.
+
+Soak is the iOS hot tub chemistry assistant. Enter your test readings — free chlorine or bromine, pH, alkalinity, calcium — and get exact doses scaled to your tub volume. Brand-aware: pick the chlorine product on your shelf and Soak does the math.
+
+Features
+• Brand-aware dose math for Cal-hypo 68%, Dichlor 56%, Liquid chlorine 12.5%
+• Bromine and chlorine sanitizer support, with sanitizer-specific target ranges
+• Test & Adjust: enter readings, get exact doses + plain-English advisories
+• After-Use Dose: scale top-up by people × hours in the tub
+• Weekly Shock guide with chlorine and non-chlorine (MPS) paths
+• Locale-aware metric/imperial units (grams/ml or oz/fl oz)
+• pH lowerer pick: dry acid or muriatic acid (31.45%)
+• Out-of-range advisories so a broken test kit doesn't dose you wrong
+• Universal app for iPhone and iPad
+
+For hot tub owners who don't want to download a sales pitch. Bromine or chlorine, 250–500 gallon home spas, 950–1900 liter European tubs.
+
+$3.99 one-time. No subscription, no ads, no account, no cloud.
+
+Privacy: Soak collects nothing. No analytics, no accounts, no network requests. Your settings live on your device.

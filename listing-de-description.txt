@@ -1,0 +1,20 @@
+Einmalkauf. Kein Abo, keine Werbung, kein Konto. Funktioniert offline.
+
+Soak ist der iOS-Whirlpool-Chemie-Assistent. Gib deine Messwerte ein — Freies Chlor oder Brom, pH, Alkalität, Calcium — und erhalte exakte Dosen, skaliert auf dein Whirlpool-Volumen. Produktbezogen: wähle das Chlorprodukt aus deinem Regal, und Soak rechnet.
+
+Funktionen
+• Produktbezogene Dosis-Berechnung für Calciumhypochlorit 68 %, Dichlor 56 %, Chlorbleichlauge 12,5 %
+• Brom- und Chlor-Desinfektion mit desinfektionsspezifischen Zielbereichen
+• Testen & Anpassen: Werte eingeben, exakte Dosen + Klartext-Hinweise erhalten
+• Dosis nach Benutzung: Nachfüllung skaliert nach Personen × Stunden im Whirlpool
+• Wöchentliche Stoßbehandlung mit Chlor- und Aktivsauerstoff-Pfaden (MPS)
+• Metrische oder imperiale Einheiten je nach Region (Gramm/ml oder oz/fl oz)
+• pH-Senker-Wahl: Trockensäure oder Salzsäure (31,45 %)
+• Außerhalb-des-Bereichs-Hinweise, damit ein defektes Testkit dich nicht falsch dosiert
+• Universal-App für iPhone und iPad
+
+Für Whirlpool-Besitzer, die keine Verkaufsmasche herunterladen wollen. Brom oder Chlor, 250–500 Gallonen Heim-Spas, 950–1900 Liter europäische Whirlpools.
+
+Einmalkauf. Kein Abo, keine Werbung, kein Konto, keine Cloud.
+
+Datenschutz: Soak erfasst nichts. Keine Analyse, keine Konten, keine Netzwerkanfragen. Deine Einstellungen bleiben auf deinem Gerät.
