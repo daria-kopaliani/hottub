@@ -7,7 +7,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "%@ ist zu hoch" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "%@ is high" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "%@ está alto" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%@ est élevé" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%@ est élevé" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "%@ è alto" } }
       }
     },
     "Add in the order shown. Wait at least 4 hours between major adjustments and re-test." : {
@@ -16,7 +17,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "In der gezeigten Reihenfolge zugeben. Zwischen größeren Anpassungen mindestens 4 Stunden warten und erneut testen." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Add in the order shown. Wait at least 4 hours between major adjustments and re-test." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Añade en el orden indicado. Espera al menos 4 horas entre ajustes importantes y vuelve a medir." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ajoute dans l'ordre indiqué. Attends au moins 4 heures entre les ajustements importants et remesure." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ajoute dans l'ordre indiqué. Attends au moins 4 heures entre les ajustements importants et remesure." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Aggiungi nell'ordine indicato. Aspetta almeno 4 ore tra le regolazioni importanti e rimisura." } }
       }
     },
     "Add the shock with the jets running for at least 15 minutes." : {
@@ -25,7 +27,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Stoßmittel bei laufenden Düsen mindestens 15 Minuten zugeben." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Add the shock with the jets running for at least 15 minutes." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Añade el producto de choque con los chorros encendidos al menos 15 minutos." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ajoute le produit choc avec les jets activés pendant au moins 15 minutes." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ajoute le produit choc avec les jets activés pendant au moins 15 minutes." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Aggiungi il prodotto shock con i getti accesi per almeno 15 minuti." } }
       }
     },
     "Aerate the water for several hours after adding." : {
@@ -34,7 +37,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Wasser nach der Zugabe mehrere Stunden belüften." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Aerate the water for several hours after adding." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Airea el agua durante varias horas tras la adición." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aère l'eau pendant plusieurs heures après l'ajout." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aère l'eau pendant plusieurs heures après l'ajout." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Aera l'acqua per diverse ore dopo l'aggiunta." } }
       }
     },
     "After-Use Dose" : {
@@ -43,7 +47,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Dosis nach Benutzung" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "After-Use Dose" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Dosis tras el uso" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dose après utilisation" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dose après utilisation" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Dose dopo l'uso" } }
       }
     },
     "Alkalinity" : {
@@ -52,7 +57,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Alkalität" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Alkalinity" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Alcalinidad" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Alcalinité" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Alcalinité" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Alcalinità" } }
       }
     },
     "Back" : {
@@ -61,7 +67,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Zurück" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Back" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Atrás" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Retour" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Retour" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Indietro" } }
       }
     },
     "Bromine" : {
@@ -70,7 +77,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Brom" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Bromine" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Bromo" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Brome" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Brome" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Bromo" } }
       }
     },
     "Bromine (ppm)" : {
@@ -79,7 +87,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Brom (ppm)" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Bromine (ppm)" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Bromo (ppm)" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Brome (ppm)" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Brome (ppm)" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Bromo (ppm)" } }
       }
     },
     "Cal-hypo 68%" : {
@@ -88,7 +97,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Calciumhypochlorit 68%" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Cal-hypo 68%" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Hipoclorito cálcico 68%" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Hypochlorite de calcium 68%" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Hypochlorite de calcium 68%" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Ipoclorito di calcio 68%" } }
       }
     },
     "Calcium" : {
@@ -97,7 +107,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Calcium" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Calcium" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Calcio" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Calcium" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Calcium" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Calcio" } }
       }
     },
     "Calcium chloride" : {
@@ -106,7 +117,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Calciumchlorid" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Calcium chloride" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Cloruro cálcico" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chlorure de calcium" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chlorure de calcium" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Cloruro di calcio" } }
       }
     },
     "Change units" : {
@@ -115,7 +127,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Einheiten ändern" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Change units" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Cambiar unidades" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Changer d'unités" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Changer d'unités" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Cambia unità" } }
       }
     },
     "Chemicals to add" : {
@@ -124,7 +137,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Zu dosieren" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Chemicals to add" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Productos a añadir" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Produits à ajouter" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Produits à ajouter" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Prodotti da aggiungere" } }
       }
     },
     "Chlorine" : {
@@ -133,7 +147,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Chlor" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Chlorine" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Cloro" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chlore" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chlore" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Cloro" } }
       }
     },
     "Chlorine product" : {
@@ -142,7 +157,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Chlorprodukt" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Chlorine product" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Producto de cloro" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Produit chloré" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Produit chloré" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Prodotto a base di cloro" } }
       }
     },
     "Chlorine target is 1–3 ppm." : {
@@ -151,7 +167,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Chlor-Zielwert ist 1–3 ppm." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Chlorine target is 1–3 ppm." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "El objetivo de cloro es 1–3 ppm." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "La cible de chlore est 1–3 ppm." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "La cible de chlore est 1–3 ppm." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "L'obiettivo del cloro è 1–3 ppm." } }
       }
     },
     "Consider a shock cycle if you haven't run one in the last few days." : {
@@ -160,7 +177,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Erwäge eine Stoßbehandlung, falls in den letzten Tagen keine erfolgt ist." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Consider a shock cycle if you haven't run one in the last few days." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Considera un tratamiento de choque si no has hecho uno en los últimos días." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Envisage un traitement choc si tu n'en as pas fait dans les derniers jours." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Envisage un traitement choc si tu n'en as pas fait dans les derniers jours." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Valuta un trattamento shock se non ne hai fatto uno negli ultimi giorni." } }
       }
     },
     "Dichlor 56%" : {
@@ -169,7 +187,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Dichlor 56%" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Dichlor 56%" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Dicloro 56%" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dichlore 56%" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dichlore 56%" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Dicloro 56%" } }
       }
     },
     "Don't add more sanitizer. Let it dissipate — re-test in a few hours." : {
@@ -178,7 +197,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Keine weitere Desinfektion zugeben. Werte sinken lassen — in ein paar Stunden erneut testen." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Don't add more sanitizer. Let it dissipate — re-test in a few hours." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "No añadas más desinfectante. Deja que baje — vuelve a medir en unas horas." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "N'ajoute pas plus de désinfectant. Laisse les valeurs baisser — remesure dans quelques heures." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "N'ajoute pas plus de désinfectant. Laisse les valeurs baisser — remesure dans quelques heures." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Non aggiungere altro disinfettante. Lascia che cali — rimisura tra qualche ora." } }
       }
     },
     "Dry acid" : {
@@ -187,7 +207,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Trockensäure" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Dry acid" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Bisulfato sódico" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Bisulfate de sodium" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Bisulfate de sodium" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Bisolfato di sodio" } }
       }
     },
     "Enter at least one reading above to see adjustments." : {
@@ -196,7 +217,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Gib oben mindestens einen Wert ein, um Anpassungen zu sehen." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter at least one reading above to see adjustments." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Introduce al menos una medición para ver los ajustes." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Saisis au moins une mesure ci-dessus pour voir les ajustements." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Saisis au moins une mesure ci-dessus pour voir les ajustements." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Inserisci almeno una misura sopra per vedere le regolazioni." } }
       }
     },
     "Enter test readings, get exact doses" : {
@@ -205,7 +227,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Werte eingeben, exakte Dosen erhalten" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter test readings, get exact doses" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Introduce las mediciones, obtén las dosis exactas" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Saisis tes mesures, obtiens les doses exactes" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Saisis tes mesures, obtiens les doses exactes" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Inserisci le misure, ottieni le dosi esatte" } }
       }
     },
     "FC (ppm)" : {
@@ -214,7 +237,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "FC (ppm)" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "FC (ppm)" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "FC (ppm)" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "FC (ppm)" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "FC (ppm)" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "FC (ppm)" } }
       }
     },
     "Free Chlorine" : {
@@ -223,7 +247,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Freies Chlor" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Free Chlorine" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Cloro libre" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chlore libre" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chlore libre" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Cloro libero" } }
       }
     },
     "gallons" : {
@@ -232,7 +257,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Gallonen" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "gallons" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "galones" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "gallons" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "gallons" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "galloni" } }
       }
     },
     "Get started" : {
@@ -241,7 +267,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Loslegen" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Get started" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Empezar" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Commencer" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Commencer" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Inizia" } }
       }
     },
     "Heads up" : {
@@ -250,7 +277,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Achtung" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Heads up" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Atención" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Attention" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Attention" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Attenzione" } }
       }
     },
     "Heavy use" : {
@@ -259,7 +287,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Starke Nutzung" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Heavy use" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Uso intenso" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Utilisation intense" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Utilisation intense" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Uso intenso" } }
       }
     },
     "Hot Tub Assistant" : {
@@ -268,7 +297,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Whirlpool-Assistent" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Hot Tub Assistant" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Asistente para Jacuzzi" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Assistant Spa" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Assistant Spa" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Assistente Idromassaggio" } }
       }
     },
     "Hours" : {
@@ -277,7 +307,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Stunden" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Hours" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Horas" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Heures" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Heures" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Ore" } }
       }
     },
     "How did you use the tub?" : {
@@ -286,7 +317,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Wie wurde der Whirlpool genutzt?" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "How did you use the tub?" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "¿Cómo usaste el jacuzzi?" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Comment as-tu utilisé le spa ?" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Comment as-tu utilisé le spa ?" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Come hai usato l'idromassaggio?" } }
       }
     },
     "How to" : {
@@ -295,7 +327,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Anleitung" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "How to" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Cómo hacerlo" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Comment faire" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Comment faire" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Come fare" } }
       }
     },
     "Imperial" : {
@@ -304,7 +337,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Imperial" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Imperial" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Imperial" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Impérial" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Impérial" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Imperiale" } }
       }
     },
     "Leave the cover off for 20–30 minutes before closing." : {
@@ -313,7 +347,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Abdeckung 20–30 Minuten offen lassen, bevor du sie schließt." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Leave the cover off for 20–30 minutes before closing." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Deja la cubierta abierta 20–30 minutos antes de cerrar." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Laisse la couverture ouverte 20–30 minutes avant de refermer." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Laisse la couverture ouverte 20–30 minutes avant de refermer." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Lascia la copertura aperta per 20–30 minuti prima di chiudere." } }
       }
     },
     "Liquid chlorine 12.5%" : {
@@ -322,7 +357,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Chlorbleichlauge 12,5%" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Liquid chlorine 12.5%" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Cloro líquido 12,5%" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chlore liquide 12,5%" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chlore liquide 12,5%" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Cloro liquido 12,5%" } }
       }
     },
     "liters" : {
@@ -331,7 +367,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Liter" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "liters" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "litros" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "litres" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "litres" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "litri" } }
       }
     },
     "Looking good." : {
@@ -340,7 +377,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Sieht gut aus." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Looking good." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Todo bien." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Tout va bien." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Tout va bien." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Tutto bene." } }
       }
     },
     "Lowers Alkalinity to %lld ppm" : {
@@ -349,7 +387,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Senkt Alkalität auf %lld ppm" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Lowers Alkalinity to %lld ppm" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Baja la alcalinidad a %lld ppm" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Réduit l'alcalinité à %lld ppm" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Réduit l'alcalinité à %lld ppm" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Riduce l'alcalinità a %lld ppm" } }
       }
     },
     "Lowers pH to 7.5" : {
@@ -358,7 +397,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Senkt pH auf 7,5" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Lowers pH to 7.5" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Baja el pH a 7,5" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Réduit le pH à 7,5" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Réduit le pH à 7,5" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Riduce il pH a 7,5" } }
       }
     },
     "Metric" : {
@@ -367,7 +407,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Metrisch" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Metric" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Métrico" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Métrique" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Métrique" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Metrico" } }
       }
     },
     "Most hot tubs use bromine. Target 2–4 ppm." : {
@@ -376,7 +417,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Die meisten Whirlpools nutzen Brom. Zielwert 2–4 ppm." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Most hot tubs use bromine. Target 2–4 ppm." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "La mayoría de jacuzzis usan bromo. Objetivo 2–4 ppm." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "La plupart des spas utilisent du brome. Cible 2–4 ppm." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "La plupart des spas utilisent du brome. Cible 2–4 ppm." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "La maggior parte degli idromassaggi usa il bromo. Obiettivo 2–4 ppm." } }
       }
     },
     "Muriatic acid" : {
@@ -385,7 +427,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Salzsäure" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Muriatic acid" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Ácido clorhídrico" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Acide chlorhydrique" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Acide chlorhydrique" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Acido cloridrico" } }
       }
     },
     "Muriatic acid (31.45%)" : {
@@ -394,7 +437,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Salzsäure (31,45%)" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Muriatic acid (31.45%)" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Ácido clorhídrico (31,45%)" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Acide chlorhydrique (31,45%)" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Acide chlorhydrique (31,45%)" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Acido cloridrico (31,45%)" } }
       }
     },
     "Next" : {
@@ -403,7 +447,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Weiter" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Next" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Siguiente" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Suivant" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Suivant" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Avanti" } }
       }
     },
     "Non-chlorine shock (MPS)" : {
@@ -412,7 +457,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Aktivsauerstoff (MPS)" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Non-chlorine shock (MPS)" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Oxígeno activo (MPS)" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Oxygène actif (MPS)" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Oxygène actif (MPS)" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Ossigeno attivo (MPS)" } }
       }
     },
     "Nothing to add right now." : {
@@ -421,7 +467,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Nichts hinzuzufügen." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Nothing to add right now." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Nada que añadir ahora." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Rien à ajouter pour le moment." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Rien à ajouter pour le moment." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Niente da aggiungere ora." } }
       }
     },
     "Once a week, or after heavy use." : {
@@ -430,7 +477,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Einmal pro Woche oder nach starker Nutzung." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Once a week, or after heavy use." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Una vez por semana, o tras un uso intenso." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Une fois par semaine, ou après une utilisation intense." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Une fois par semaine, ou après une utilisation intense." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Una volta a settimana o dopo un uso intenso." } }
       }
     },
     "Once-a-week treatment" : {
@@ -439,7 +487,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Wöchentliche Behandlung" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Once-a-week treatment" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Tratamiento semanal" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Traitement hebdomadaire" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Traitement hebdomadaire" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Trattamento settimanale" } }
       }
     },
     "Outside the usual range — worth checking your test kit." : {
@@ -448,7 +497,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Außerhalb des üblichen Bereichs — prüfe dein Testkit." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Outside the usual range — worth checking your test kit." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Fuera del rango habitual — comprueba tu kit de medición." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Hors plage habituelle — vérifie ton kit de mesure." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Hors plage habituelle — vérifie ton kit de mesure." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Fuori dall'intervallo abituale — controlla il tuo kit di misura." } }
       }
     },
     "People" : {
@@ -457,7 +507,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Personen" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "People" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Personas" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Personnes" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Personnes" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Persone" } }
       }
     },
     "pH" : {
@@ -466,7 +517,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "pH" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "pH" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "pH" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "pH" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "pH" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "pH" } }
       }
     },
     "pH lowerer" : {
@@ -475,7 +527,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "pH-Senker" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "pH lowerer" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Reductor de pH" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Réducteur de pH" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Réducteur de pH" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Riduttore di pH" } }
       }
     },
     "Pick what's on your shelf — we'll size doses to match." : {
@@ -484,7 +537,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Wähle, was du da hast — wir passen die Dosen an." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Pick what's on your shelf — we'll size doses to match." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Elige lo que tengas — ajustaremos las dosis." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Choisis ce que tu as — on ajustera les doses." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Choisis ce que tu as — on ajustera les doses." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Scegli quello che hai — adatteremo le dosi." } }
       }
     },
     "ppm" : {
@@ -493,7 +547,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "ppm" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "ppm" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "ppm" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ppm" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ppm" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "ppm" } }
       }
     },
     "Preferred chemicals" : {
@@ -502,7 +557,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Bevorzugte Chemikalien" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Preferred chemicals" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Productos preferidos" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Produits préférés" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Produits préférés" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Prodotti preferiti" } }
       }
     },
     "Privacy policy" : {
@@ -511,7 +567,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Datenschutz" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Privacy policy" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Política de privacidad" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Politique de confidentialité" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Politique de confidentialité" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Informativa sulla privacy" } }
       }
     },
     "Raises %@ to %@ ppm" : {
@@ -520,7 +577,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Erhöht %1$@ auf %2$@ ppm" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Raises %@ to %@ ppm" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Sube %1$@ a %2$@ ppm" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Augmente %1$@ à %2$@ ppm" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Augmente %1$@ à %2$@ ppm" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Aumenta %1$@ a %2$@ ppm" } }
       }
     },
     "Raises Alkalinity to %lld ppm" : {
@@ -529,7 +587,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Erhöht Alkalität auf %lld ppm" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Raises Alkalinity to %lld ppm" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Sube la alcalinidad a %lld ppm" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Augmente l'alcalinité à %lld ppm" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Augmente l'alcalinité à %lld ppm" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Aumenta l'alcalinità a %lld ppm" } }
       }
     },
     "Raises Calcium to %lld ppm" : {
@@ -538,7 +597,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Erhöht Calcium auf %lld ppm" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Raises Calcium to %lld ppm" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Sube el calcio a %lld ppm" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Augmente le calcium à %lld ppm" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Augmente le calcium à %lld ppm" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Aumenta il calcio a %lld ppm" } }
       }
     },
     "Raises pH to 7.5" : {
@@ -547,7 +607,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Erhöht pH auf 7,5" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Raises pH to 7.5" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Sube el pH a 7,5" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Augmente le pH à 7,5" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Augmente le pH à 7,5" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Aumenta il pH a 7,5" } }
       }
     },
     "Re-test %@" : {
@@ -556,7 +617,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "%@ erneut testen" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Re-test %@" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Vuelve a medir %@" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Remesure %@" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Remesure %@" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Rimisura %@" } }
       }
     },
     "Remove the cover and run the jets." : {
@@ -565,7 +627,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Abdeckung entfernen und Düsen einschalten." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Remove the cover and run the jets." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Quita la cubierta y enciende los chorros." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Retire la couverture et active les jets." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Retire la couverture et active les jets." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Rimuovi la copertura e accendi i getti." } }
       }
     },
     "Run the jets while adding. Re-test sanitizer level after 30–60 minutes." : {
@@ -574,7 +637,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Düsen beim Zugeben laufen lassen. Desinfektion nach 30–60 Minuten erneut testen." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Run the jets while adding. Re-test sanitizer level after 30–60 minutes." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Pon los chorros mientras añades. Vuelve a medir el desinfectante después de 30–60 minutos." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Active les jets en ajoutant. Remesure le désinfectant après 30–60 minutes." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Active les jets en ajoutant. Remesure le désinfectant après 30–60 minutes." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Tieni i getti accesi durante l'aggiunta. Rimisura il disinfettante dopo 30–60 minuti." } }
       }
     },
     "Sanitizer" : {
@@ -583,7 +647,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Desinfektionsmittel" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Sanitizer" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Desinfectante" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Désinfectant" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Désinfectant" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Disinfettante" } }
       }
     },
     "Sets the target range we'll aim for." : {
@@ -592,7 +657,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Bestimmt den Zielbereich für die Werte." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Sets the target range we'll aim for." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Define el rango objetivo de los valores." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Définit la plage cible pour les valeurs." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Définit la plage cible pour les valeurs." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Definisce l'intervallo di riferimento." } }
       }
     },
     "Settings" : {
@@ -601,7 +667,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Einstellungen" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Settings" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Ajustes" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Réglages" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Réglages" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Impostazioni" } }
       }
     },
     "Shock" : {
@@ -610,7 +677,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Stoßbehandlung" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Shock" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Choque" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Traitement choc" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Traitement choc" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Shock" } }
       }
     },
     "Shock breaks down body oils and bound sanitizer. The water may look cloudy briefly." : {
@@ -619,7 +687,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Die Stoßbehandlung baut Körperöle und gebundene Desinfektion ab. Das Wasser kann kurz trüb wirken." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Shock breaks down body oils and bound sanitizer. The water may look cloudy briefly." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "El tratamiento de choque elimina los aceites corporales y el desinfectante combinado. El agua puede verse turbia brevemente." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Le traitement choc dégrade les huiles corporelles et le désinfectant combiné. L'eau peut paraître trouble brièvement." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Le traitement choc dégrade les huiles corporelles et le désinfectant combiné. L'eau peut paraître trouble brièvement." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Lo shock degrada gli oli corporei e il disinfettante legato. L'acqua può apparire torbida brevemente." } }
       }
     },
     "So doses match the products you have." : {
@@ -628,7 +697,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Damit die Dosen zu deinen Produkten passen." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "So doses match the products you have." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Para que las dosis se ajusten a tus productos." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Pour que les doses correspondent à tes produits." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Pour que les doses correspondent à tes produits." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Così le dosi si adattano ai tuoi prodotti." } }
       }
     },
     "Soda ash" : {
@@ -637,7 +707,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Natriumcarbonat" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Soda ash" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Carbonato sódico" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Carbonate de sodium" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Carbonate de sodium" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Carbonato di sodio" } }
       }
     },
     "Sodium bicarbonate (baking soda)" : {
@@ -646,7 +717,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Natriumhydrogencarbonat (Natron)" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Sodium bicarbonate (baking soda)" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Bicarbonato de sodio" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Bicarbonate de sodium" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Bicarbonate de sodium" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Bicarbonato di sodio" } }
       }
     },
     "Sodium bromide" : {
@@ -655,7 +727,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Natriumbromid" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Sodium bromide" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Bromuro sódico" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Bromure de sodium" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Bromure de sodium" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Bromuro di sodio" } }
       }
     },
     "Step %lld of %lld" : {
@@ -664,7 +737,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Schritt %1$lld von %2$lld" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Step %lld of %lld" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Paso %1$lld de %2$lld" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Étape %1$lld sur %2$lld" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Étape %1$lld sur %2$lld" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Passaggio %1$lld di %2$lld" } }
       }
     },
     "Support" : {
@@ -673,7 +747,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Support" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Support" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Soporte" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Support" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Support" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Supporto" } }
       }
     },
     "Target" : {
@@ -682,7 +757,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Ziel" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Target" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Objetivo" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Cible" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Cible" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Obiettivo" } }
       }
     },
     "Test & Adjust" : {
@@ -691,7 +767,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Testen & Anpassen" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Test & Adjust" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Medir y ajustar" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Mesurer et ajuster" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Mesurer et ajuster" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Misura e regola" } }
       }
     },
     "Top up sanitizer after each use" : {
@@ -700,7 +777,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Desinfektion nach jeder Nutzung auffüllen" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Top up sanitizer after each use" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Recarga el desinfectante tras cada uso" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Recharge le désinfectant après chaque utilisation" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Recharge le désinfectant après chaque utilisation" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Reintegra il disinfettante dopo ogni utilizzo" } }
       }
     },
     "Typical home tubs hold 250–500 gallons. Check your manual or the cabinet label." : {
@@ -709,7 +787,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Übliche Whirlpools fassen 250–500 Gallonen. Schau ins Handbuch oder aufs Typenschild." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Typical home tubs hold 250–500 gallons. Check your manual or the cabinet label." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Los jacuzzis domésticos suelen contener 250–500 galones. Consulta el manual o la etiqueta." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Les spas domestiques contiennent généralement 250–500 gallons. Consulte le manuel ou l'étiquette." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Les spas domestiques contiennent généralement 250–500 gallons. Consulte le manuel ou l'étiquette." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Gli idromassaggi domestici contengono di solito 250–500 galloni. Controlla il manuale o l'etichetta." } }
       }
     },
     "Typical home tubs hold 950–1900 liters. Check your manual or the cabinet label." : {
@@ -718,7 +797,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Übliche Whirlpools fassen 950–1900 Liter. Schau ins Handbuch oder aufs Typenschild." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Typical home tubs hold 950–1900 liters. Check your manual or the cabinet label." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Los jacuzzis domésticos suelen contener 950–1900 litros. Consulta el manual o la etiqueta." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Les spas domestiques contiennent généralement 950–1900 litres. Consulte le manuel ou l'étiquette." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Les spas domestiques contiennent généralement 950–1900 litres. Consulte le manuel ou l'étiquette." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Gli idromassaggi domestici contengono di solito 950–1900 litri. Controlla il manuale o l'etichetta." } }
       }
     },
     "Units" : {
@@ -727,7 +807,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Einheiten" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Units" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Unidades" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Unités" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Unités" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Unità" } }
       }
     },
     "v%@" : {
@@ -736,7 +817,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "v%@" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "v%@" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "v%@" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "v%@" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "v%@" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "v%@" } }
       }
     },
     "Volume" : {
@@ -745,7 +827,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Volumen" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Volume" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Volumen" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Volume" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Volume" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Volume" } }
       }
     },
     "Volume, sanitizer, products" : {
@@ -754,7 +837,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Volumen, Desinfektion, Produkte" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Volume, sanitizer, products" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Volumen, desinfectante, productos" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Volume, désinfectant, produits" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Volume, désinfectant, produits" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Volume, disinfettante, prodotti" } }
       }
     },
     "Wait at least 15 minutes before using the tub." : {
@@ -763,7 +847,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Mindestens 15 Minuten warten, bevor du den Whirlpool nutzt." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Wait at least 15 minutes before using the tub." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Espera al menos 15 minutos antes de usar el jacuzzi." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Attends au moins 15 minutes avant d'utiliser le spa." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Attends au moins 15 minutes avant d'utiliser le spa." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Aspetta almeno 15 minuti prima di usare l'idromassaggio." } }
       }
     },
     "Wait until free chlorine drops below 5 ppm before using the tub." : {
@@ -772,7 +857,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Warten, bis das freie Chlor unter 5 ppm fällt, bevor du den Whirlpool nutzt." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Wait until free chlorine drops below 5 ppm before using the tub." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Espera a que el cloro libre baje de 5 ppm antes de usar el jacuzzi." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Attends que le chlore libre passe sous 5 ppm avant d'utiliser le spa." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Attends que le chlore libre passe sous 5 ppm avant d'utiliser le spa." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Aspetta che il cloro libero scenda sotto 5 ppm prima di usare l'idromassaggio." } }
       }
     },
     "We use this to size your doses." : {
@@ -781,7 +867,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Damit berechnen wir die richtige Dosis." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "We use this to size your doses." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Lo usamos para calcular las dosis." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "On l'utilise pour calculer les doses." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "On l'utilise pour calculer les doses." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Lo usiamo per calcolare le dosi." } }
       }
     },
     "What sanitizer does your tub use?" : {
@@ -790,7 +877,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Welches Desinfektionsmittel verwendest du?" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "What sanitizer does your tub use?" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "¿Qué desinfectante usas?" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Quel désinfectant utilises-tu ?" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Quel désinfectant utilises-tu ?" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Quale disinfettante usi?" } }
       }
     },
     "What's the volume of your hot tub?" : {
@@ -799,7 +887,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Wie viel Wasser fasst dein Whirlpool?" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "What's the volume of your hot tub?" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "¿Cuál es el volumen de tu jacuzzi?" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Quel est le volume de ton spa ?" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Quel est le volume de ton spa ?" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Qual è il volume del tuo idromassaggio?" } }
       }
     },
     "Which chemicals do you use?" : {
@@ -808,7 +897,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Welche Chemikalien verwendest du?" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Which chemicals do you use?" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "¿Qué productos químicos usas?" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Quels produits chimiques utilises-tu ?" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Quels produits chimiques utilises-tu ?" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Quali prodotti chimici usi?" } }
       }
     },
     "You can change all answers later in Settings." : {
@@ -817,7 +907,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Du kannst alle Antworten später in den Einstellungen ändern." } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "You can change all answers later in Settings." } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Puedes cambiar todas las respuestas más tarde en Ajustes." } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Tu peux modifier toutes les réponses plus tard dans les Réglages." } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Tu peux modifier toutes les réponses plus tard dans les Réglages." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Puoi modificare tutte le risposte più tardi in Impostazioni." } }
       }
     },
     "Your hot tub" : {
@@ -826,7 +917,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Dein Whirlpool" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Your hot tub" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Tu jacuzzi" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ton spa" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ton spa" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Il tuo idromassaggio" } }
       }
     },
     "Your readings" : {
@@ -835,7 +927,8 @@
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Deine Werte" } },
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Your readings" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Tus mediciones" } },
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Tes mesures" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Tes mesures" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Le tue misure" } }
       }
     }
   },
