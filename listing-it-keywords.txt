@@ -1,0 +1,1 @@
+bromo,cloro,idromassaggio,pH,alcalinità,calcio,dosaggio,manutenzione,disinfettante,calcolatrice,ppm
