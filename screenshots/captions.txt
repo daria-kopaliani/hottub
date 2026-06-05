@@ -1,0 +1,34 @@
+# Soak v1.1 — Localized screenshot captions
+# Format: lang|shot-id|caption
+# Per SCREENSHOT_PROMPTS.md: ≤55 chars, indexable, one line, no emoji.
+# 4 shots × 6 locales = 24 caption strings (replicated across iPhone + iPad per locale).
+
+en|01|Test in, doses out — brand-aware math
+en|02|After-use top-ups by people × hours
+en|03|Weekly shock: walkthrough included
+en|04|Pay once. No ads. No accounts.
+
+de|01|Werte rein, Dosen raus — produktbezogen
+de|02|Nachfüllen nach Nutzung: Personen × Stunden
+de|03|Wöchentliche Stoßbehandlung mit Anleitung
+de|04|Einmalkauf. Keine Werbung. Kein Konto.
+
+es|01|Mediciones dentro, dosis fuera — adaptado al producto
+es|02|Recargas tras el uso: personas × horas
+es|03|Tratamiento de choque semanal, paso a paso
+es|04|Pago único. Sin anuncios. Sin cuenta.
+
+fr|01|Mesures entrées, doses calculées — adapté au produit
+fr|02|Recharges après usage : personnes × heures
+fr|03|Traitement choc hebdomadaire, étape par étape
+fr|04|Achat unique. Sans pub. Sans compte.
+
+it|01|Misure dentro, dosi fuori — adatto al prodotto
+it|02|Reintegri dopo l'uso: persone × ore
+it|03|Trattamento shock settimanale, passo passo
+it|04|Acquisto unico. Niente pub. Niente account.
+
+ja|01|測定値を入力、製品別の正確な投薬量を表示
+ja|02|使用後の補充：人数 × 時間
+ja|03|週1回のショック処理、ステップガイド付き
+ja|04|買い切り。広告なし。アカウント不要。
