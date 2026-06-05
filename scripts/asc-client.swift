@@ -571,15 +571,21 @@ case "upload-listing":
     let target = onlyLocale.map { o in allLocales.filter { $0 == o } } ?? allLocales
     if let o = onlyLocale { print("Filtering to locale=\(o)") }
 
+    // Global URLs (same content across all locales unless per-locale file overrides).
+    let globalPrivacyURL = (try? String(contentsOf: URL(fileURLWithPath: "listings/privacy-url.txt"), encoding: .utf8)) ?? ""
+    let globalSupportURL = (try? String(contentsOf: URL(fileURLWithPath: "listings/support-url.txt"), encoding: .utf8)) ?? ""
+
     for locale in target {
         let lang = localeToDir(locale)
         print("---")
         print("[\(locale)] ← listings/\(lang)-*.txt")
 
-        // Page 1: name + subtitle → appInfoLocalization
+        // Page 1: name + subtitle + privacyPolicyUrl → appInfoLocalization
         var infoAttrs: [String: String] = [:]
         if let name = readListingFile(lang: lang, field: "name") { infoAttrs["name"] = name }
         if let subtitle = readListingFile(lang: lang, field: "subtitle") { infoAttrs["subtitle"] = subtitle }
+        let perLocalePrivacy = readListingFile(lang: lang, field: "privacy-url") ?? globalPrivacyURL
+        if !perLocalePrivacy.isEmpty { infoAttrs["privacyPolicyUrl"] = perLocalePrivacy }
         if !infoAttrs.isEmpty,
            let infoLoc = appInfoLocs.first(where: { $0.locale == locale }) {
             print("  → appInfoLocalization \(infoLoc.id):")
@@ -587,12 +593,14 @@ case "upload-listing":
             if !dryRun { patchAppInfoLocalization(id: infoLoc.id, attributes: infoAttrs) }
         }
 
-        // Page 2: description + keywords + promotionalText + whatsNew → appStoreVersionLocalization
+        // Page 2: description + keywords + promotionalText + whatsNew + supportUrl → appStoreVersionLocalization
         var verAttrs: [String: String] = [:]
         if let desc = readListingFile(lang: lang, field: "description") { verAttrs["description"] = desc }
         if let kw = readListingFile(lang: lang, field: "keywords") { verAttrs["keywords"] = kw }
         if let promo = readListingFile(lang: lang, field: "promo") { verAttrs["promotionalText"] = promo }
         if let wn = readListingFile(lang: lang, field: "whats-new") { verAttrs["whatsNew"] = wn }
+        let perLocaleSupport = readListingFile(lang: lang, field: "support-url") ?? globalSupportURL
+        if !perLocaleSupport.isEmpty { verAttrs["supportUrl"] = perLocaleSupport }
         if !verAttrs.isEmpty,
            let verLoc = versionLocs.first(where: { $0.locale == locale }) {
             print("  → appStoreVersionLocalization \(verLoc.id):")
