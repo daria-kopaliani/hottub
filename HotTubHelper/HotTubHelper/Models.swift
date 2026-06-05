@@ -8,15 +8,15 @@ enum Sanitizer: String, CaseIterable, Codable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .chlorine: return "Chlorine"
-        case .bromine: return "Bromine"
+        case .chlorine: return String(localized: "Chlorine")
+        case .bromine: return String(localized: "Bromine")
         }
     }
 
     var unitLabel: String {
         switch self {
-        case .chlorine: return "FC (ppm)"
-        case .bromine: return "Bromine (ppm)"
+        case .chlorine: return String(localized: "FC (ppm)")
+        case .bromine: return String(localized: "Bromine (ppm)")
         }
     }
 
@@ -39,9 +39,9 @@ enum ChlorineProduct: String, CaseIterable, Codable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .liquid125: return "Liquid chlorine 12.5%"
-        case .calHypo68: return "Cal-hypo 68%"
-        case .dichlor56: return "Dichlor 56%"
+        case .liquid125: return String(localized: "Liquid chlorine 12.5%")
+        case .calHypo68: return String(localized: "Cal-hypo 68%")
+        case .dichlor56: return String(localized: "Dichlor 56%")
         }
     }
 
@@ -52,7 +52,7 @@ enum PHRaiser: String, CaseIterable, Codable, Identifiable {
     case sodaAsh
 
     var id: String { rawValue }
-    var displayName: String { "Soda ash" }
+    var displayName: String { String(localized: "Soda ash") }
 }
 
 enum PHLowerer: String, CaseIterable, Codable, Identifiable {
@@ -63,8 +63,8 @@ enum PHLowerer: String, CaseIterable, Codable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .dryAcid: return "Dry acid"
-        case .muriatic: return "Muriatic acid"
+        case .dryAcid: return String(localized: "Dry acid")
+        case .muriatic: return String(localized: "Muriatic acid")
         }
     }
 

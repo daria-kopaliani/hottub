@@ -73,20 +73,20 @@ struct OnboardingView: View {
             HStack(spacing: 0) {
                 stepCard(1,
                          icon: "drop.fill",
-                         title: "What's the volume of your hot tub?",
-                         subtitle: "We use this to size your doses.") {
+                         title: String(localized: "What's the volume of your hot tub?"),
+                         subtitle: String(localized: "We use this to size your doses.")) {
                     VolumeStep(isValid: $isVolumeValid)
                 }
                 stepCard(2,
                          icon: "sparkles",
-                         title: "What sanitizer does your tub use?",
-                         subtitle: "Sets the target range we'll aim for.") {
+                         title: String(localized: "What sanitizer does your tub use?"),
+                         subtitle: String(localized: "Sets the target range we'll aim for.")) {
                     SanitizerStep()
                 }
                 stepCard(3,
                          icon: "testtube.2",
-                         title: "Which chemicals do you use?",
-                         subtitle: "So doses match the products you have.") {
+                         title: String(localized: "Which chemicals do you use?"),
+                         subtitle: String(localized: "So doses match the products you have.")) {
                     ChemicalsStep()
                 }
             }
@@ -141,7 +141,7 @@ struct OnboardingView: View {
 
     private var primaryButton: some View {
         Button(action: goNext) {
-            Text(currentStep == totalSteps ? "Get started" : "Next")
+            Text(LocalizedStringKey(currentStep == totalSteps ? "Get started" : "Next"))
                 .frame(maxWidth: .infinity)
                 .fontWeight(.semibold)
         }
@@ -214,7 +214,7 @@ private struct VolumeStep: View {
 
                 Button(action: toggleUnit) {
                     HStack(alignment: .firstTextBaseline, spacing: 4) {
-                        Text(config.useMetric ? "liters" : "gallons")
+                        Text(LocalizedStringKey(config.useMetric ? "liters" : "gallons"))
                             .font(.title2.weight(.medium))
                         Image(systemName: "chevron.up.chevron.down")
                             .font(.footnote.weight(.semibold))
@@ -235,8 +235,8 @@ private struct VolumeStep: View {
 
     private var helpText: String {
         config.useMetric
-            ? "Typical home tubs hold 950–1900 liters. Check your manual or the cabinet label."
-            : "Typical home tubs hold 250–500 gallons. Check your manual or the cabinet label."
+            ? String(localized: "Typical home tubs hold 950–1900 liters. Check your manual or the cabinet label.")
+            : String(localized: "Typical home tubs hold 250–500 gallons. Check your manual or the cabinet label.")
     }
 
     private func syncVolumeText() {
@@ -276,8 +276,8 @@ private struct SanitizerStep: View {
 
     private var helpText: String {
         switch config.sanitizer {
-        case .bromine: return "Most hot tubs use bromine. Target 2–4 ppm."
-        case .chlorine: return "Chlorine target is 1–3 ppm."
+        case .bromine: return String(localized: "Most hot tubs use bromine. Target 2–4 ppm.")
+        case .chlorine: return String(localized: "Chlorine target is 1–3 ppm.")
         }
     }
 }
@@ -289,7 +289,7 @@ private struct ChemicalsStep: View {
         VStack(alignment: .leading, spacing: 10) {
             VStack(spacing: 0) {
                 if config.sanitizer == .chlorine {
-                    pickerRow(label: "Chlorine product") {
+                    pickerRow(label: String(localized: "Chlorine product")) {
                         Picker("", selection: $config.preferredChlorineProduct) {
                             ForEach(ChlorineProduct.allCases) { Text($0.displayName).tag($0) }
                         }
@@ -299,7 +299,7 @@ private struct ChemicalsStep: View {
                     }
                     Divider().padding(.leading, 16)
                 }
-                pickerRow(label: "pH lowerer") {
+                pickerRow(label: String(localized: "pH lowerer")) {
                     Picker("", selection: $config.preferredPHLowerer) {
                         ForEach(PHLowerer.allCases) { Text($0.displayName).tag($0) }
                     }

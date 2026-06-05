@@ -42,14 +42,14 @@ struct SettingsView: View {
                         .onChange(of: config.useMetric) { _, _ in
                             if !volumeFocused { syncVolumeText() }
                         }
-                    Text(config.useMetric ? "liters" : "gallons")
+                    Text(LocalizedStringKey(config.useMetric ? "liters" : "gallons"))
                         .foregroundStyle(.secondary)
                 }
                 Picker("Sanitizer", selection: $config.sanitizer) {
                     ForEach(Sanitizer.allCases) { Text($0.displayName).tag($0) }
                 }
             } header: {
-                SectionHeaderLabel("Your hot tub")
+                SectionHeaderLabel(String(localized: "Your hot tub"))
             }
 
             Section {
@@ -62,13 +62,13 @@ struct SettingsView: View {
                     ForEach(PHLowerer.allCases) { Text($0.displayName).tag($0) }
                 }
             } header: {
-                SectionHeaderLabel("Preferred chemicals")
+                SectionHeaderLabel(String(localized: "Preferred chemicals"))
             }
 
             Section {
-                LinkRow(title: "Privacy policy",
+                LinkRow(title: String(localized: "Privacy policy"),
                         url: URL(string: "https://daria-kopaliani.github.io/moondog/hottub/privacy.html")!)
-                LinkRow(title: "Support",
+                LinkRow(title: String(localized: "Support"),
                         url: URL(string: "https://daria-kopaliani.github.io/moondog/hottub/support.html")!)
             } footer: {
                 Text("v\(appVersion)")

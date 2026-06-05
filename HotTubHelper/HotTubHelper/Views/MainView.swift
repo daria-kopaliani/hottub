@@ -12,24 +12,24 @@ struct MainView: View {
                     } label: {
                         ActionRow(symbol: "eyedropper.halffull",
                                   tint: .blue,
-                                  title: "Test & Adjust",
-                                  subtitle: "Enter test readings, get exact doses")
+                                  title: String(localized: "Test & Adjust"),
+                                  subtitle: String(localized: "Enter test readings, get exact doses"))
                     }
                     NavigationLink {
                         AfterUseView()
                     } label: {
                         ActionRow(symbol: "person.2.fill",
                                   tint: .orange,
-                                  title: "After-Use Dose",
-                                  subtitle: "Top up sanitizer after each use")
+                                  title: String(localized: "After-Use Dose"),
+                                  subtitle: String(localized: "Top up sanitizer after each use"))
                     }
                     NavigationLink {
                         ShockView()
                     } label: {
                         ActionRow(symbol: "bolt.fill",
                                   tint: .pink,
-                                  title: "Shock",
-                                  subtitle: "Once-a-week treatment")
+                                  title: String(localized: "Shock"),
+                                  subtitle: String(localized: "Once-a-week treatment"))
                     }
                 }
                 Section {
@@ -38,8 +38,8 @@ struct MainView: View {
                     } label: {
                         ActionRow(symbol: "gearshape.fill",
                                   tint: .gray,
-                                  title: "Settings",
-                                  subtitle: "Volume, sanitizer, products")
+                                  title: String(localized: "Settings"),
+                                  subtitle: String(localized: "Volume, sanitizer, products"))
                     }
                 }
             }

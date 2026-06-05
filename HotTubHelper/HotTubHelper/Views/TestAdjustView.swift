@@ -32,7 +32,7 @@ struct TestAdjustView: View {
         Form {
             Section {
                 readingRow(label: sanitizerLabel,
-                           unit: "ppm",
+                           unit: String(localized: "ppm"),
                            text: $sanitizerText,
                            parsedValue: sanitizerValue,
                            target: config.sanitizer.targetRange,
@@ -48,7 +48,7 @@ struct TestAdjustView: View {
                             chText = "120"
                         }
                     }
-                readingRow(label: "pH",
+                readingRow(label: String(localized: "pH"),
                            unit: nil,
                            text: $phText,
                            parsedValue: phValue,
@@ -56,16 +56,16 @@ struct TestAdjustView: View {
                            practical: Formulas.PracticalRange.pH,
                            rangeText: DisplayFormat.rangeOneDecimal(Formulas.TargetRange.pH),
                            field: .ph)
-                readingRow(label: "Alkalinity",
-                           unit: "ppm",
+                readingRow(label: String(localized: "Alkalinity"),
+                           unit: String(localized: "ppm"),
                            text: $taText,
                            parsedValue: taValue,
                            target: Formulas.TargetRange.totalAlkalinity,
                            practical: Formulas.PracticalRange.totalAlkalinity,
                            rangeText: DisplayFormat.rangeInteger(Formulas.TargetRange.totalAlkalinity),
                            field: .ta)
-                readingRow(label: "Calcium",
-                           unit: "ppm",
+                readingRow(label: String(localized: "Calcium"),
+                           unit: String(localized: "ppm"),
                            text: $chText,
                            parsedValue: chValue,
                            target: Formulas.TargetRange.calciumHardness,
@@ -89,8 +89,8 @@ struct TestAdjustView: View {
 
     private var sanitizerLabel: String {
         switch config.sanitizer {
-        case .chlorine: return "Free Chlorine"
-        case .bromine: return "Bromine"
+        case .chlorine: return String(localized: "Free Chlorine")
+        case .bromine: return String(localized: "Bromine")
         }
     }
 
@@ -219,8 +219,8 @@ struct TestAdjustView: View {
                                                        gallons: config.gallons)
                 if !dose.isNegligible {
                     out.append(.init(
-                        title: "Raises Alkalinity to \(Int(target)) ppm",
-                        product: "Sodium bicarbonate (baking soda)",
+                        title: String(localized: "Raises Alkalinity to \(Int(target)) ppm"),
+                        product: String(localized: "Sodium bicarbonate (baking soda)"),
                         dose: dose,
                         detail: nil))
                 }
@@ -231,10 +231,10 @@ struct TestAdjustView: View {
                                                        gallons: config.gallons)
                 if !dose.isNegligible {
                     out.append(.init(
-                        title: "Lowers Alkalinity to \(Int(target)) ppm",
-                        product: "Muriatic acid (31.45%)",
+                        title: String(localized: "Lowers Alkalinity to \(Int(target)) ppm"),
+                        product: String(localized: "Muriatic acid (31.45%)"),
                         dose: dose,
-                        detail: "Aerate the water for several hours after adding."))
+                        detail: String(localized: "Aerate the water for several hours after adding.")))
                 }
             }
         }
@@ -245,7 +245,7 @@ struct TestAdjustView: View {
                                                gallons: config.gallons)
                 if !dose.isNegligible {
                     out.append(.init(
-                        title: "Raises pH to 7.5",
+                        title: String(localized: "Raises pH to 7.5"),
                         product: PHRaiser.sodaAsh.displayName,
                         dose: dose,
                         detail: nil))
@@ -256,7 +256,7 @@ struct TestAdjustView: View {
                                                product: config.preferredPHLowerer)
                 if !dose.isNegligible {
                     out.append(.init(
-                        title: "Lowers pH to 7.5",
+                        title: String(localized: "Lowers pH to 7.5"),
                         product: config.preferredPHLowerer.displayName,
                         dose: dose,
                         detail: nil))
@@ -272,8 +272,8 @@ struct TestAdjustView: View {
                                                 gallons: config.gallons)
             if !dose.isNegligible {
                 out.append(.init(
-                    title: "Raises Calcium to \(Int(target)) ppm",
-                    product: "Calcium chloride",
+                    title: String(localized: "Raises Calcium to \(Int(target)) ppm"),
+                    product: String(localized: "Calcium chloride"),
                     dose: dose,
                     detail: nil))
             }
@@ -295,11 +295,11 @@ struct TestAdjustView: View {
             case .bromine:
                 dose = Formulas.bromineDose(currentBr: v, targetBr: mid,
                                             gallons: config.gallons)
-                product = "Sodium bromide"
+                product = String(localized: "Sodium bromide")
             }
             if !dose.isNegligible {
                 out.append(.init(
-                    title: "Raises \(config.sanitizer.displayName) to \(DisplayFormat.oneDecimal(mid)) ppm",
+                    title: String(localized: "Raises \(config.sanitizer.displayName) to \(DisplayFormat.oneDecimal(mid)) ppm"),
                     product: product,
                     dose: dose,
                     detail: nil))
@@ -317,21 +317,20 @@ struct TestAdjustView: View {
             outOfRange.append(sanitizerLabel)
         }
         if let v = phValue, !Formulas.PracticalRange.pH.contains(v) {
-            outOfRange.append("pH")
+            outOfRange.append(String(localized: "pH"))
         }
         if let v = taValue, !Formulas.PracticalRange.totalAlkalinity.contains(v) {
-            outOfRange.append("Alkalinity")
+            outOfRange.append(String(localized: "Alkalinity"))
         }
         if let v = chValue, !Formulas.PracticalRange.calciumHardness.contains(v) {
-            outOfRange.append("Calcium")
+            outOfRange.append(String(localized: "Calcium"))
         }
 
         if !outOfRange.isEmpty {
             let names = outOfRange.joined(separator: ", ")
-            let isPlural = outOfRange.count > 1
             out.append(.init(
-                title: "Re-test \(names)",
-                body: "\(isPlural ? "They're" : "It's") outside the usual range — worth checking your test kit.",
+                title: String(localized: "Re-test \(names)"),
+                body: String(localized: "Outside the usual range — worth checking your test kit."),
                 kind: .warning))
         }
 
@@ -339,8 +338,8 @@ struct TestAdjustView: View {
            config.sanitizer.practicalRange.contains(v),
            v > config.sanitizer.targetRange.upperBound {
             out.append(.init(
-                title: "\(config.sanitizer.displayName) is high",
-                body: "Don't add more sanitizer. Let it dissipate — re-test in a few hours.",
+                title: String(localized: "\(config.sanitizer.displayName) is high"),
+                body: String(localized: "Don't add more sanitizer. Let it dissipate — re-test in a few hours."),
                 kind: .warning))
         }
 

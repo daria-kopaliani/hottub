@@ -19,7 +19,7 @@ struct AfterUseView: View {
     var product: String {
         switch config.sanitizer {
         case .chlorine: return config.preferredChlorineProduct.displayName
-        case .bromine: return "Sodium bromide"
+        case .bromine: return String(localized: "Sodium bromide")
         }
     }
 
@@ -49,7 +49,7 @@ struct AfterUseView: View {
                     Slider(value: $hours, in: 0.25...4.0, step: 0.25)
                 }
             } header: {
-                SectionHeaderLabel("How did you use the tub?")
+                SectionHeaderLabel(String(localized: "How did you use the tub?"))
             }
 
             Section {
@@ -57,7 +57,7 @@ struct AfterUseView: View {
                          dose: dose,
                          metric: config.useMetric)
             } header: {
-                SectionHeaderLabel("Chemicals to add")
+                SectionHeaderLabel(String(localized: "Chemicals to add"))
             } footer: {
                 Text("Run the jets while adding. Re-test sanitizer level after 30–60 minutes.")
                     .font(.footnote)
@@ -66,8 +66,8 @@ struct AfterUseView: View {
             if personHours >= 5 {
                 Section {
                     AdvisoryRow(advisory: Advisory(
-                        title: "Heavy use",
-                        body: "Consider a shock cycle if you haven't run one in the last few days.",
+                        title: String(localized: "Heavy use"),
+                        body: String(localized: "Consider a shock cycle if you haven't run one in the last few days."),
                         kind: .shock))
                 }
             }
