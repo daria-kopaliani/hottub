@@ -520,11 +520,14 @@ func listingLangDirs() -> [String] {
     return langs.sorted()
 }
 
-func createAppInfoLocalization(appInfoID: String, locale: String) -> String {
+func createAppInfoLocalization(appInfoID: String, locale: String, name: String? = nil, subtitle: String? = nil) -> String? {
+    var attributes: [String: String] = ["locale": locale]
+    if let n = name, !n.isEmpty { attributes["name"] = n }
+    if let s = subtitle, !s.isEmpty { attributes["subtitle"] = s }
     let payload: [String: Any] = [
         "data": [
             "type": "appInfoLocalizations",
-            "attributes": ["locale": locale],
+            "attributes": attributes,
             "relationships": [
                 "appInfo": ["data": ["type": "appInfos", "id": appInfoID]]
             ]
@@ -532,6 +535,7 @@ func createAppInfoLocalization(appInfoID: String, locale: String) -> String {
     ]
     let body = try! JSONSerialization.data(withJSONObject: payload)
     let (status, resp) = ascRequest(method: "POST", path: "/v1/appInfoLocalizations", jwt: jwt, body: body)
+    if status == 409 { return nil }  // already exists (from a partial earlier run) — skip
     guard status == 201,
           let json = try? JSONSerialization.jsonObject(with: resp) as? [String: Any],
           let data = json["data"] as? [String: Any],
@@ -541,7 +545,7 @@ func createAppInfoLocalization(appInfoID: String, locale: String) -> String {
     return id
 }
 
-func createVersionLocalization(versionID: String, locale: String) -> String {
+func createVersionLocalization(versionID: String, locale: String) -> String? {
     let payload: [String: Any] = [
         "data": [
             "type": "appStoreVersionLocalizations",
@@ -553,6 +557,7 @@ func createVersionLocalization(versionID: String, locale: String) -> String {
     ]
     let body = try! JSONSerialization.data(withJSONObject: payload)
     let (status, resp) = ascRequest(method: "POST", path: "/v1/appStoreVersionLocalizations", jwt: jwt, body: body)
+    if status == 409 { return nil }
     guard status == 201,
           let json = try? JSONSerialization.jsonObject(with: resp) as? [String: Any],
           let data = json["data"] as? [String: Any],
@@ -687,9 +692,12 @@ case "upload-screenshots":
     }
 
 case "upload-listing":
-    guard CommandLine.arguments.count >= 3 else { die("Usage: upload-listing <bundleId> [--dry-run] [--only <locale>]") }
+    guard CommandLine.arguments.count >= 3 else { die("Usage: upload-listing <bundleId> [--dry-run] [--only <locale>] [--skip-whats-new]") }
     let bundleID = CommandLine.arguments[2]
     let dryRun = CommandLine.arguments.contains("--dry-run")
+    // whatsNew can't be set on initial-release versions (no prior version users would see it).
+    // Pass --skip-whats-new for v1.0 first submission.
+    let skipWhatsNew = CommandLine.arguments.contains("--skip-whats-new")
     var onlyLocale: String? = nil
     if let i = CommandLine.arguments.firstIndex(of: "--only"),
        i + 1 < CommandLine.arguments.count {
@@ -737,7 +745,7 @@ case "upload-listing":
         if let desc = readListingFile(lang: lang, field: "description") { verAttrs["description"] = desc }
         if let kw = readListingFile(lang: lang, field: "keywords") { verAttrs["keywords"] = kw }
         if let promo = readListingFile(lang: lang, field: "promo") { verAttrs["promotionalText"] = promo }
-        if let wn = readListingFile(lang: lang, field: "whats-new") { verAttrs["whatsNew"] = wn }
+        if !skipWhatsNew, let wn = readListingFile(lang: lang, field: "whats-new") { verAttrs["whatsNew"] = wn }
         let perLocaleSupport = readListingFile(lang: lang, field: "support-url") ?? globalSupportURL
         if !perLocaleSupport.isEmpty { verAttrs["supportUrl"] = perLocaleSupport }
         if !verAttrs.isEmpty,
@@ -771,16 +779,26 @@ case "create-locales":
             if dryRun {
                 created.append("appInfoLocalization")
             } else {
-                let id = createAppInfoLocalization(appInfoID: appInfoID, locale: locale)
-                created.append("appInfoLocalization=\(id)")
+                // Apple now requires `name` at creation time (formerly optional). Subtitle is
+                // optional but cheap to pass since we have it.
+                let perLocaleName = readListingFile(lang: dir, field: "name")
+                let perLocaleSubtitle = readListingFile(lang: dir, field: "subtitle")
+                if let id = createAppInfoLocalization(appInfoID: appInfoID, locale: locale, name: perLocaleName, subtitle: perLocaleSubtitle) {
+                    created.append("appInfoLocalization=\(id)")
+                } else {
+                    created.append("appInfoLocalization=(409 already-exists)")
+                }
             }
         }
         if !existingVerLocs.contains(locale) {
             if dryRun {
                 created.append("appStoreVersionLocalization")
             } else {
-                let id = createVersionLocalization(versionID: version.versionID, locale: locale)
-                created.append("appStoreVersionLocalization=\(id)")
+                if let id = createVersionLocalization(versionID: version.versionID, locale: locale) {
+                    created.append("appStoreVersionLocalization=\(id)")
+                } else {
+                    created.append("appStoreVersionLocalization=(409 already-exists)")
+                }
             }
         }
         if created.isEmpty {
