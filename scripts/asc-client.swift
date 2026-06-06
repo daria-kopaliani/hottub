@@ -120,14 +120,14 @@ func printJSON(_ data: Data) {
     }
 }
 
-// MARK: - Subcommands
+// MARK: - Bootstrap
 
 let (issuerID, keyID, p8Path) = readConfig()
 let privateKey = try loadPrivateKey(p8Path: p8Path)
 let jwt = try generateJWT(issuerID: issuerID, keyID: keyID, privateKey: privateKey)
 
 guard CommandLine.arguments.count >= 2 else {
-    die("Usage: asc-client.swift <list-apps|list-versions|list-localizations|upload-screenshots|upload-listing|create-locales|set-review-notes> [args...]")
+    die("Usage: asc-client.swift <list-apps|list-versions|list-localizations|upload-screenshots|upload-listing|create-locales|set-review-notes|set-copyright|set-content-rights|set-age-ratings> [args...]")
 }
 
 let subcommand = CommandLine.arguments[1]
@@ -633,6 +633,63 @@ func createReviewDetail(versionID: String, notes: String) -> String {
     return id
 }
 
+// MARK: - Copyright + content rights + age ratings
+
+func patchVersionCopyright(versionID: String, copyright: String) {
+    let payload: [String: Any] = [
+        "data": [
+            "type": "appStoreVersions",
+            "id": versionID,
+            "attributes": ["copyright": copyright]
+        ]
+    ]
+    let body = try! JSONSerialization.data(withJSONObject: payload)
+    let (status, resp) = ascRequest(method: "PATCH", path: "/v1/appStoreVersions/\(versionID)", jwt: jwt, body: body)
+    guard status == 200 else { printJSON(resp); die("PATCH appStoreVersion copyright failed: HTTP \(status)") }
+}
+
+func patchAppContentRights(appID: String, usesThirdPartyContent: Bool) {
+    let declaration = usesThirdPartyContent ? "USES_THIRD_PARTY_CONTENT" : "DOES_NOT_USE_THIRD_PARTY_CONTENT"
+    let payload: [String: Any] = [
+        "data": [
+            "type": "apps",
+            "id": appID,
+            "attributes": ["contentRightsDeclaration": declaration]
+        ]
+    ]
+    let body = try! JSONSerialization.data(withJSONObject: payload)
+    let (status, resp) = ascRequest(method: "PATCH", path: "/v1/apps/\(appID)", jwt: jwt, body: body)
+    guard status == 200 else { printJSON(resp); die("PATCH app contentRightsDeclaration failed: HTTP \(status)") }
+}
+
+func findAgeRatingDeclarationID(appInfoID: String) -> String? {
+    let (status, body) = ascRequest(
+        method: "GET",
+        path: "/v1/appInfos/\(appInfoID)/ageRatingDeclaration",
+        jwt: jwt
+    )
+    guard status == 200,
+          let json = try? JSONSerialization.jsonObject(with: body) as? [String: Any],
+          let data = json["data"] as? [String: Any],
+          let id = data["id"] as? String else {
+        return nil
+    }
+    return id
+}
+
+func patchAgeRatingDeclaration(id: String, attributes: [String: Any]) {
+    let payload: [String: Any] = [
+        "data": [
+            "type": "ageRatingDeclarations",
+            "id": id,
+            "attributes": attributes
+        ]
+    ]
+    let body = try! JSONSerialization.data(withJSONObject: payload)
+    let (status, resp) = ascRequest(method: "PATCH", path: "/v1/ageRatingDeclarations/\(id)", jwt: jwt, body: body)
+    guard status == 200 else { printJSON(resp); die("PATCH ageRatingDeclaration failed: HTTP \(status)") }
+}
+
 // MARK: - Subcommands
 
 switch subcommand {
@@ -835,6 +892,79 @@ case "set-review-notes":
             print("CREATED appStoreReviewDetail \(id)")
         }
     }
+
+case "set-copyright":
+    guard CommandLine.arguments.count >= 3 else { die("Usage: set-copyright <bundleId> [--text \"© 2026 Name\"] [--dry-run]") }
+    let bundleID = CommandLine.arguments[2]
+    let dryRun = CommandLine.arguments.contains("--dry-run")
+    var text = "© 2026 Daria Kopaliani"
+    if let i = CommandLine.arguments.firstIndex(of: "--text"), i + 1 < CommandLine.arguments.count {
+        text = CommandLine.arguments[i + 1]
+    } else if let fileText = try? String(contentsOf: URL(fileURLWithPath: "listings/copyright.txt"), encoding: .utf8) {
+        text = fileText.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    let version = findVersionInPrep(bundleID: bundleID)
+    print("Found app=\(version.appID) version=\(version.versionString) (\(version.versionID))")
+    print("copyright text: \(text) (\(text.count) chars)")
+    print(dryRun ? "MODE: DRY RUN" : "MODE: LIVE")
+    if !dryRun { patchVersionCopyright(versionID: version.versionID, copyright: text) }
+
+case "set-content-rights":
+    guard CommandLine.arguments.count >= 3 else { die("Usage: set-content-rights <bundleId> [--uses-third-party] [--dry-run]") }
+    let bundleID = CommandLine.arguments[2]
+    let dryRun = CommandLine.arguments.contains("--dry-run")
+    let usesThirdParty = CommandLine.arguments.contains("--uses-third-party")
+    let (s1, b1) = ascRequest(method: "GET", path: "/v1/apps", jwt: jwt,
+                              query: ["filter[bundleId]": bundleID, "fields[apps]": "bundleId"])
+    guard s1 == 200,
+          let json = try? JSONSerialization.jsonObject(with: b1) as? [String: Any],
+          let data = json["data"] as? [[String: Any]],
+          let appID = data.first?["id"] as? String else {
+        printJSON(b1); die("Could not find app for \(bundleID)")
+    }
+    let declaration = usesThirdParty ? "USES_THIRD_PARTY_CONTENT" : "DOES_NOT_USE_THIRD_PARTY_CONTENT"
+    print("appID=\(appID) → contentRightsDeclaration=\(declaration)")
+    print(dryRun ? "MODE: DRY RUN" : "MODE: LIVE")
+    if !dryRun { patchAppContentRights(appID: appID, usesThirdPartyContent: usesThirdParty) }
+
+case "set-age-ratings":
+    guard CommandLine.arguments.count >= 3 else { die("Usage: set-age-ratings <bundleId> [--dry-run]") }
+    let bundleID = CommandLine.arguments[2]
+    let dryRun = CommandLine.arguments.contains("--dry-run")
+    let version = findVersionInPrep(bundleID: bundleID)
+    let appInfoID = findEditableAppInfoID(appID: version.appID)
+    guard let declID = findAgeRatingDeclarationID(appInfoID: appInfoID) else {
+        die("No ageRatingDeclaration found for appInfo \(appInfoID)")
+    }
+    print("appInfo=\(appInfoID) ageRatingDeclaration=\(declID)")
+    // All-NONE / no defaults appropriate for a chemistry / utility app with no UGC, ads, gambling, etc.
+    let attrs: [String: Any] = [
+        "ageAssurance": false,
+        "alcoholTobaccoOrDrugUseOrReferences": "NONE",
+        "contests": "NONE",
+        "gamblingSimulated": "NONE",
+        "gambling": false,
+        "gunsOrOtherWeapons": "NONE",
+        "horrorOrFearThemes": "NONE",
+        "matureOrSuggestiveThemes": "NONE",
+        "medicalOrTreatmentInformation": "NONE",
+        "messagingAndChat": false,
+        "parentalControls": false,
+        "profanityOrCrudeHumor": "NONE",
+        "sexualContentGraphicAndNudity": "NONE",
+        "sexualContentOrNudity": "NONE",
+        "unrestrictedWebAccess": false,
+        "userGeneratedContent": false,
+        "violenceCartoonOrFantasy": "NONE",
+        "violenceRealistic": "NONE",
+        "violenceRealisticProlongedGraphicOrSadistic": "NONE",
+        "healthOrWellnessTopics": false,
+        "advertising": false,
+        "lootBox": false
+    ]
+    print("declarations to PATCH: \(attrs.count) fields, all NONE/false")
+    print(dryRun ? "MODE: DRY RUN" : "MODE: LIVE")
+    if !dryRun { patchAgeRatingDeclaration(id: declID, attributes: attrs) }
 
 default:
     die("Unknown subcommand: \(subcommand)")
