@@ -127,7 +127,7 @@ let privateKey = try loadPrivateKey(p8Path: p8Path)
 let jwt = try generateJWT(issuerID: issuerID, keyID: keyID, privateKey: privateKey)
 
 guard CommandLine.arguments.count >= 2 else {
-    die("Usage: asc-client.swift <list-apps|list-versions|list-localizations|upload-screenshots|upload-listing|create-locales|set-review-notes|set-copyright|set-content-rights|set-age-ratings> [args...]")
+    die("Usage: asc-client.swift <list-apps|list-versions|list-localizations|upload-screenshots|upload-listing|create-locales|set-review-notes|set-copyright|set-content-rights|set-age-ratings|submit-for-review> [args...]")
 }
 
 let subcommand = CommandLine.arguments[1]
@@ -690,6 +690,63 @@ func patchAgeRatingDeclaration(id: String, attributes: [String: Any]) {
     guard status == 200 else { printJSON(resp); die("PATCH ageRatingDeclaration failed: HTTP \(status)") }
 }
 
+// MARK: - Submit for review
+
+func createReviewSubmission(appID: String) -> String {
+    let payload: [String: Any] = [
+        "data": [
+            "type": "reviewSubmissions",
+            "attributes": ["platform": "IOS"],
+            "relationships": [
+                "app": ["data": ["type": "apps", "id": appID]]
+            ]
+        ]
+    ]
+    let body = try! JSONSerialization.data(withJSONObject: payload)
+    let (status, resp) = ascRequest(method: "POST", path: "/v1/reviewSubmissions", jwt: jwt, body: body)
+    guard status == 201,
+          let json = try? JSONSerialization.jsonObject(with: resp) as? [String: Any],
+          let data = json["data"] as? [String: Any],
+          let id = data["id"] as? String else {
+        printJSON(resp); die("POST reviewSubmission failed: HTTP \(status)")
+    }
+    return id
+}
+
+func addReviewSubmissionItem(reviewSubmissionID: String, versionID: String) -> String {
+    let payload: [String: Any] = [
+        "data": [
+            "type": "reviewSubmissionItems",
+            "relationships": [
+                "reviewSubmission": ["data": ["type": "reviewSubmissions", "id": reviewSubmissionID]],
+                "appStoreVersion": ["data": ["type": "appStoreVersions", "id": versionID]]
+            ]
+        ]
+    ]
+    let body = try! JSONSerialization.data(withJSONObject: payload)
+    let (status, resp) = ascRequest(method: "POST", path: "/v1/reviewSubmissionItems", jwt: jwt, body: body)
+    guard status == 201,
+          let json = try? JSONSerialization.jsonObject(with: resp) as? [String: Any],
+          let data = json["data"] as? [String: Any],
+          let id = data["id"] as? String else {
+        printJSON(resp); die("POST reviewSubmissionItem failed: HTTP \(status)")
+    }
+    return id
+}
+
+func submitReviewSubmission(reviewSubmissionID: String) {
+    let payload: [String: Any] = [
+        "data": [
+            "type": "reviewSubmissions",
+            "id": reviewSubmissionID,
+            "attributes": ["submitted": true]
+        ]
+    ]
+    let body = try! JSONSerialization.data(withJSONObject: payload)
+    let (status, resp) = ascRequest(method: "PATCH", path: "/v1/reviewSubmissions/\(reviewSubmissionID)", jwt: jwt, body: body)
+    guard status == 200 else { printJSON(resp); die("PATCH reviewSubmission submitted=true failed: HTTP \(status)") }
+}
+
 // MARK: - Subcommands
 
 switch subcommand {
@@ -965,6 +1022,24 @@ case "set-age-ratings":
     print("declarations to PATCH: \(attrs.count) fields, all NONE/false")
     print(dryRun ? "MODE: DRY RUN" : "MODE: LIVE")
     if !dryRun { patchAgeRatingDeclaration(id: declID, attributes: attrs) }
+
+case "submit-for-review":
+    guard CommandLine.arguments.count >= 3 else { die("Usage: submit-for-review <bundleId> [--dry-run]") }
+    let bundleID = CommandLine.arguments[2]
+    let dryRun = CommandLine.arguments.contains("--dry-run")
+    let version = findVersionInPrep(bundleID: bundleID)
+    print("Found app=\(version.appID) version=\(version.versionString) (\(version.versionID)) state=PREPARE_FOR_SUBMISSION")
+    print(dryRun ? "MODE: DRY RUN" : "MODE: LIVE — will submit to Apple")
+    if dryRun { break }
+    print("Step 1/3 — POST reviewSubmission for app \(version.appID)")
+    let submissionID = createReviewSubmission(appID: version.appID)
+    print("  reviewSubmission=\(submissionID)")
+    print("Step 2/3 — POST reviewSubmissionItem for version \(version.versionID)")
+    let itemID = addReviewSubmissionItem(reviewSubmissionID: submissionID, versionID: version.versionID)
+    print("  reviewSubmissionItem=\(itemID)")
+    print("Step 3/3 — PATCH reviewSubmission submitted=true")
+    submitReviewSubmission(reviewSubmissionID: submissionID)
+    print("  ✓ submitted")
 
 default:
     die("Unknown subcommand: \(subcommand)")
