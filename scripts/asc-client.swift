@@ -127,7 +127,7 @@ let privateKey = try loadPrivateKey(p8Path: p8Path)
 let jwt = try generateJWT(issuerID: issuerID, keyID: keyID, privateKey: privateKey)
 
 guard CommandLine.arguments.count >= 2 else {
-    die("Usage: asc-client.swift <list-apps|list-versions|list-localizations|upload-screenshots> [args...]")
+    die("Usage: asc-client.swift <list-apps|list-versions|list-localizations|upload-screenshots|upload-listing|create-locales|set-review-notes> [args...]")
 }
 
 let subcommand = CommandLine.arguments[1]
@@ -208,7 +208,22 @@ func localeToDir(_ locale: String) -> String {
     case "fr-FR": return "fr"
     case "it": return "it"
     case "ja": return "ja"
+    case "zh-Hans": return "zh-Hans"
     default: return locale  // fallback
+    }
+}
+
+// Reverse of localeToDir: given a listings/ directory prefix, return the ASC locale code to create.
+func dirToLocale(_ dir: String) -> String {
+    switch dir {
+    case "en": return "en-US"
+    case "de": return "de-DE"
+    case "es": return "es-ES"
+    case "fr": return "fr-FR"
+    case "it": return "it"
+    case "ja": return "ja"
+    case "zh-Hans": return "zh-Hans"
+    default: return dir
     }
 }
 
@@ -489,6 +504,130 @@ func patchVersionLocalization(id: String, attributes: [String: String]) {
     guard status == 200 else { printJSON(resp); die("PATCH appStoreVersionLocalization \(id) failed: HTTP \(status)") }
 }
 
+// MARK: - Locale creation
+
+// Scan ./listings/ for <dir>-name.txt files and return the unique dir prefixes ("en", "de", "es"...).
+func listingLangDirs() -> [String] {
+    let fm = FileManager.default
+    guard let files = try? fm.contentsOfDirectory(atPath: "listings") else { return [] }
+    var langs = Set<String>()
+    for f in files {
+        if f.hasSuffix("-name.txt") {
+            let lang = String(f.dropLast("-name.txt".count))
+            langs.insert(lang)
+        }
+    }
+    return langs.sorted()
+}
+
+func createAppInfoLocalization(appInfoID: String, locale: String) -> String {
+    let payload: [String: Any] = [
+        "data": [
+            "type": "appInfoLocalizations",
+            "attributes": ["locale": locale],
+            "relationships": [
+                "appInfo": ["data": ["type": "appInfos", "id": appInfoID]]
+            ]
+        ]
+    ]
+    let body = try! JSONSerialization.data(withJSONObject: payload)
+    let (status, resp) = ascRequest(method: "POST", path: "/v1/appInfoLocalizations", jwt: jwt, body: body)
+    guard status == 201,
+          let json = try? JSONSerialization.jsonObject(with: resp) as? [String: Any],
+          let data = json["data"] as? [String: Any],
+          let id = data["id"] as? String else {
+        printJSON(resp); die("POST appInfoLocalization \(locale) failed: HTTP \(status)")
+    }
+    return id
+}
+
+func createVersionLocalization(versionID: String, locale: String) -> String {
+    let payload: [String: Any] = [
+        "data": [
+            "type": "appStoreVersionLocalizations",
+            "attributes": ["locale": locale],
+            "relationships": [
+                "appStoreVersion": ["data": ["type": "appStoreVersions", "id": versionID]]
+            ]
+        ]
+    ]
+    let body = try! JSONSerialization.data(withJSONObject: payload)
+    let (status, resp) = ascRequest(method: "POST", path: "/v1/appStoreVersionLocalizations", jwt: jwt, body: body)
+    guard status == 201,
+          let json = try? JSONSerialization.jsonObject(with: resp) as? [String: Any],
+          let data = json["data"] as? [String: Any],
+          let id = data["id"] as? String else {
+        printJSON(resp); die("POST appStoreVersionLocalization \(locale) failed: HTTP \(status)")
+    }
+    return id
+}
+
+// MARK: - Review notes
+
+// Read REVIEW_NOTES.md, strip the markdown header (everything up through the first "---" line),
+// return the trimmed body.
+func readReviewNotes(path: String = "REVIEW_NOTES.md") -> String {
+    guard let content = try? String(contentsOf: URL(fileURLWithPath: path), encoding: .utf8) else {
+        die("Missing \(path) in current directory")
+    }
+    let lines = content.split(separator: "\n", omittingEmptySubsequences: false)
+    if let sepIdx = lines.firstIndex(where: { $0.trimmingCharacters(in: .whitespaces) == "---" }) {
+        let body = lines[(sepIdx + 1)...].joined(separator: "\n")
+        return body.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    return content.trimmingCharacters(in: .whitespacesAndNewlines)
+}
+
+// Get the existing appStoreReviewDetail id linked to a version, or nil.
+func findReviewDetailID(versionID: String) -> String? {
+    let (status, body) = ascRequest(
+        method: "GET",
+        path: "/v1/appStoreVersions/\(versionID)/appStoreReviewDetail",
+        jwt: jwt
+    )
+    guard status == 200,
+          let json = try? JSONSerialization.jsonObject(with: body) as? [String: Any],
+          let data = json["data"] as? [String: Any],
+          let id = data["id"] as? String else {
+        return nil
+    }
+    return id
+}
+
+func patchReviewDetail(id: String, notes: String) {
+    let payload: [String: Any] = [
+        "data": [
+            "type": "appStoreReviewDetails",
+            "id": id,
+            "attributes": ["notes": notes]
+        ]
+    ]
+    let body = try! JSONSerialization.data(withJSONObject: payload)
+    let (status, resp) = ascRequest(method: "PATCH", path: "/v1/appStoreReviewDetails/\(id)", jwt: jwt, body: body)
+    guard status == 200 else { printJSON(resp); die("PATCH appStoreReviewDetail \(id) failed: HTTP \(status)") }
+}
+
+func createReviewDetail(versionID: String, notes: String) -> String {
+    let payload: [String: Any] = [
+        "data": [
+            "type": "appStoreReviewDetails",
+            "attributes": ["notes": notes],
+            "relationships": [
+                "appStoreVersion": ["data": ["type": "appStoreVersions", "id": versionID]]
+            ]
+        ]
+    ]
+    let body = try! JSONSerialization.data(withJSONObject: payload)
+    let (status, resp) = ascRequest(method: "POST", path: "/v1/appStoreReviewDetails", jwt: jwt, body: body)
+    guard status == 201,
+          let json = try? JSONSerialization.jsonObject(with: resp) as? [String: Any],
+          let data = json["data"] as? [String: Any],
+          let id = data["id"] as? String else {
+        printJSON(resp); die("POST appStoreReviewDetail failed: HTTP \(status)")
+    }
+    return id
+}
+
 // MARK: - Subcommands
 
 switch subcommand {
@@ -606,6 +745,76 @@ case "upload-listing":
             print("  → appStoreVersionLocalization \(verLoc.id):")
             for (k, v) in verAttrs { print("    \(k) (\(v.count) chars)") }
             if !dryRun { patchVersionLocalization(id: verLoc.id, attributes: verAttrs) }
+        }
+    }
+
+case "create-locales":
+    guard CommandLine.arguments.count >= 3 else { die("Usage: create-locales <bundleId> [--dry-run]") }
+    let bundleID = CommandLine.arguments[2]
+    let dryRun = CommandLine.arguments.contains("--dry-run")
+
+    let version = findVersionInPrep(bundleID: bundleID)
+    print("Found app=\(version.appID) version=\(version.versionString) (\(version.versionID))")
+    print(dryRun ? "MODE: DRY RUN" : "MODE: LIVE (will POST missing localizations)")
+
+    let appInfoID = findEditableAppInfoID(appID: version.appID)
+    let existingInfoLocs = Set(listAppInfoLocalizations(appInfoID: appInfoID).map { $0.locale })
+    let existingVerLocs = Set(listLocalizations(versionID: version.versionID).map { $0.locale })
+
+    let langDirs = listingLangDirs()
+    print("Local listings/ dirs: \(langDirs.joined(separator: ", "))")
+
+    for dir in langDirs {
+        let locale = dirToLocale(dir)
+        var created: [String] = []
+        if !existingInfoLocs.contains(locale) {
+            if dryRun {
+                created.append("appInfoLocalization")
+            } else {
+                let id = createAppInfoLocalization(appInfoID: appInfoID, locale: locale)
+                created.append("appInfoLocalization=\(id)")
+            }
+        }
+        if !existingVerLocs.contains(locale) {
+            if dryRun {
+                created.append("appStoreVersionLocalization")
+            } else {
+                let id = createVersionLocalization(versionID: version.versionID, locale: locale)
+                created.append("appStoreVersionLocalization=\(id)")
+            }
+        }
+        if created.isEmpty {
+            print("[\(dir) → \(locale)] already present")
+        } else {
+            print("[\(dir) → \(locale)] \(dryRun ? "WOULD CREATE" : "created"): \(created.joined(separator: ", "))")
+        }
+    }
+
+case "set-review-notes":
+    guard CommandLine.arguments.count >= 3 else { die("Usage: set-review-notes <bundleId> [--dry-run] [--file <path>]") }
+    let bundleID = CommandLine.arguments[2]
+    let dryRun = CommandLine.arguments.contains("--dry-run")
+    var notesPath = "REVIEW_NOTES.md"
+    if let i = CommandLine.arguments.firstIndex(of: "--file"), i + 1 < CommandLine.arguments.count {
+        notesPath = CommandLine.arguments[i + 1]
+    }
+
+    let version = findVersionInPrep(bundleID: bundleID)
+    print("Found app=\(version.appID) version=\(version.versionString) (\(version.versionID))")
+    let notes = readReviewNotes(path: notesPath)
+    print("Notes from \(notesPath): \(notes.count) chars")
+    print(dryRun ? "MODE: DRY RUN" : "MODE: LIVE")
+    if dryRun {
+        print("---preview---")
+        print(notes)
+        print("---/preview---")
+    } else {
+        if let id = findReviewDetailID(versionID: version.versionID) {
+            print("PATCH existing appStoreReviewDetail \(id)")
+            patchReviewDetail(id: id, notes: notes)
+        } else {
+            let id = createReviewDetail(versionID: version.versionID, notes: notes)
+            print("CREATED appStoreReviewDetail \(id)")
         }
     }
 
