@@ -141,7 +141,7 @@ What v1.0 ships:
 - UI-test instrumentation flags (`-UITestDemoState`, `-UITestSampleReadings`, `-UITestStartScreen=…`)
 - Test coverage for every formula via absolute-tolerance assertions in `FormulasTests`
 
-What v1.0 does NOT ship: v1.1+ planning lives in [`SOAK_BACKLOG.md`](SOAK_BACKLOG.md). This research doc stays as the *snapshot* of the retroactive Pass-1 sweep; the backlog is the *living* engineering planning surface where active feature specs + handoffs land.
+What v1.0 does NOT ship: v1.1+ planning lives in [`BACKLOG.md`](BACKLOG.md). This research doc stays as the *snapshot* of the retroactive Pass-1 sweep; the backlog is the *living* engineering planning surface where active feature specs + handoffs land.
 
 ## Pricing rationale
 

@@ -1,6 +1,6 @@
 # Soak — Backlog
 
-Living engineering planning surface for Soak v1.1+. Pairs with [`SOAK_RESEARCH.md`](SOAK_RESEARCH.md) (product / market snapshot from the retroactive Pass-1 sweep). Structure convention documented in [`SPEC.md`](../../SPEC.md) "Feature backlog".
+Living engineering planning surface for Soak v1.1+. Pairs with [`RESEARCH.md`](RESEARCH.md) (product / market snapshot from the retroactive Pass-1 sweep). Structure convention documented in [`SPEC.md`](../../SPEC.md) "Feature backlog".
 
 ## Shipped
 
@@ -13,7 +13,7 @@ Living engineering planning surface for Soak v1.1+. Pairs with [`SOAK_RESEARCH.m
 
 ### Why
 
-Single biggest revenue lever for a shipped indie iOS utility per the 2025–2026 indie-recap research (Roman Koch's January 2026 Medium post; Itemlist localization-recovery data). Apple's own numbers: localized apps see up to 128% more downloads per country and 38% lift vs non-localized. Each localization gives a fresh 30-char subtitle + 100-char keyword allocation in App Store Connect — the multiplier effect compounds existing US ranking through cross-localization. Soak is live, the chemistry is stable, and the audience profile (hot-tub owners 35–65) is widely distributed across European + Asian markets. Sourced from [`SOAK_RESEARCH.md`](SOAK_RESEARCH.md) v1.1 backlog (medium priority, ~2–3 days effort estimate; localization-execution research adds ~half a day for App Store Connect metadata + screenshot regeneration so revised estimate is ~3–4 days end-to-end).
+Single biggest revenue lever for a shipped indie iOS utility per the 2025–2026 indie-recap research (Roman Koch's January 2026 Medium post; Itemlist localization-recovery data). Apple's own numbers: localized apps see up to 128% more downloads per country and 38% lift vs non-localized. Each localization gives a fresh 30-char subtitle + 100-char keyword allocation in App Store Connect — the multiplier effect compounds existing US ranking through cross-localization. Soak is live, the chemistry is stable, and the audience profile (hot-tub owners 35–65) is widely distributed across European + Asian markets. Sourced from [`RESEARCH.md`](RESEARCH.md) v1.1 backlog (medium priority, ~2–3 days effort estimate; localization-execution research adds ~half a day for App Store Connect metadata + screenshot regeneration so revised estimate is ~3–4 days end-to-end).
 
 ### Scope
 
@@ -88,7 +88,7 @@ Single biggest revenue lever for a shipped indie iOS utility per the 2025–2026
 
 ### Handoff prompt
 
-Paste the block below into a new Claude Code session started in `/Users/dariakopaliani/Projects/moondog/`. Same shape as `FLUX_HANDOFF.md`, `CROP_HANDOFF.md`, `SEAL_HANDOFF.md`, `POND_HANDOFF.md`.
+Paste the block below into a new Claude Code session started in `/Users/dariakopaliani/Projects/moondog/`. Same shape as `HANDOFF.md`, `HANDOFF.md`, `HANDOFF.md`, `HANDOFF.md`.
 
 ---
 
@@ -98,15 +98,15 @@ Build Soak v1.1: localization to 5 languages (DE, ES, FR, IT, JA) for the live S
 Read these first, in order, before doing anything else:
 1. /Users/dariakopaliani/Projects/moondog/SPEC.md — Moon Dog portfolio + conventions. Especially "Feature backlog" (how this workflow is structured), "Submit sequence" (App Store metadata + clipboard delivery), and Conventions (iOS 17 deployment, git identity override, encryption Info.plist flag, screenshot dimensions).
 2. /Users/dariakopaliani/.claude/projects/-Users-dariakopaliani-Projects-moondog/memory/MEMORY.md plus every file it links to — Daria's preferences, work patterns, and feedback memories. Especially "Propose before changing code", "Let Daria pace the ship flow", "Commit scope", "Hot Tub git identity".
-3. /Users/dariakopaliani/Projects/moondog/apps/soak/SOAK_BACKLOG.md — this file. The "Up next: v1.1 Localization" section IS the spec. Read all of it. Why / Scope / Approach / Open questions / Definition of done.
-4. /Users/dariakopaliani/Projects/moondog/apps/soak/SOAK_RESEARCH.md — Soak's audience / chemistry / competing-apps context. Useful for advisory-tone calibration during translation review.
+3. /Users/dariakopaliani/Projects/moondog/apps/soak/BACKLOG.md — this file. The "Up next: v1.1 Localization" section IS the spec. Read all of it. Why / Scope / Approach / Open questions / Definition of done.
+4. /Users/dariakopaliani/Projects/moondog/apps/soak/RESEARCH.md — Soak's audience / chemistry / competing-apps context. Useful for advisory-tone calibration during translation review.
 5. /Users/dariakopaliani/Projects/moondog/LISTING_PROMPTS.md, SCREENSHOT_PROMPTS.md, ICON_PROMPTS.md — ship-prep reusable patterns. App Store metadata localization uses LISTING_PROMPTS' 7-block structure per language; screenshot regeneration uses SCREENSHOT_PROMPTS' 4-shot pattern per language.
 6. /Users/dariakopaliani/Projects/moondog/apps/soak/HOW_WE_WORK.md — Soak's project-level working rules.
 
 Then do these four steps, in order, stopping after each for Daria to direct you:
 
 Step 1 — Resolve the open questions.
-The "Open questions" subsection of SOAK_BACKLOG.md Up-Next has 5 items (JA translation method, DE volume defaults, What's-new copy template, subtitle re-translation strategy, privacy policy URL). Surface each in chat with my recommendation and any alternatives; wait for Daria's lock-in on each before proceeding.
+The "Open questions" subsection of BACKLOG.md Up-Next has 5 items (JA translation method, DE volume defaults, What's-new copy template, subtitle re-translation strategy, privacy policy URL). Surface each in chat with my recommendation and any alternatives; wait for Daria's lock-in on each before proceeding.
 
 Step 2 — Extract strings.
 Audit every user-facing literal in /Users/dariakopaliani/Projects/moondog/apps/soak/HotTubHelper/HotTubHelper/. Files to sweep: Models.swift, Formulas.swift (only displayName-style literals if any), HotTubConfig.swift, ContentView.swift, NumericInput.swift, SettingsToolbar.swift, and every file in Views/. Catalog every string in a proposal to Daria (in chat) before creating Localizable.xcstrings — she should see the full string set before any code change. Pay particular attention to advisory-body strings in TestAdjustView (multi-sentence), recommendation titles ("Raises Alkalinity to X ppm" — has a number interpolation that needs proper format-arg in xcstrings), and onboarding help strings (multi-line, length-sensitive).
@@ -138,7 +138,7 @@ Conventions to follow throughout (full list in SPEC.md, key ones again):
 
 Pricing: unchanged at $3.99 (no price experiment in v1.1).
 
-Final reminder: stop after each of the four steps and let Daria direct. Do not run ahead. Do not localize TFP source citations or brand product names (per Scope-out in SOAK_BACKLOG.md).
+Final reminder: stop after each of the four steps and let Daria direct. Do not run ahead. Do not localize TFP source citations or brand product names (per Scope-out in BACKLOG.md).
 ```
 
 ---
