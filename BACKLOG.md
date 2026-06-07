@@ -147,6 +147,7 @@ Final reminder: stop after each of the four steps and let Daria direct. Do not r
 
 | Feature | Why | Effort | Priority |
 |---|---|---|---|
+| Ship comma-decimal locale parse fix | `NumericInput.parse` used `Locale.current`-pinned `NumberFormatter`; users on comma-decimal locales (en_UA, fr_FR, etc.) typing a US-format decimal like "7.5" silently parsed as nil → dose math skipped that reading. Fixed in `47549ef` 2026-06-07 — already in main, **not yet in the App Store binary** (v1.0.1 is latest shipped). Mention in next version's What's New ("Fixed numeric input on systems with comma decimal separators."). Coordinate with v1.1 localization since comma-decimal locales include DE/ES/FR/IT — the fix becomes more visible once those locales ship. | shipped (release-only) | **High** |
 | CYA tracking + FC/CYA ratio | `Formulas.TargetRange.cyanuricAcid` defined but not surfaced; dichlor users accumulate CYA silently, FC effectiveness drops. The canonical TFP diagnostic missing from v1.0. | ~0.5 day | **High** |
 | Combined-parameter advisories | High pH + low TA = CO₂ imbalance; low CH + high pH = scale risk; chronic FC + high TA = chronic high pH. Per-parameter advisors miss these canonical diagnoses. | ~0.5 day | **High** |
 | Source-attributed advisory copy | "Per TFP: …" inline in advisory bodies. Matches Crust / Flux / Crop / Seal / Pond named-source wedge. Note: blocks pure-metadata-only localization update — coordinate with v1.1 timing. | ~0.5 day | Medium |
