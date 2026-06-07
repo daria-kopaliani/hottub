@@ -148,3 +148,31 @@ struct FormulasTests {
         #expect(dose.formatted(metric: true) == "—")
     }
 }
+
+// MARK: - Numeric input parser
+
+@Suite("Numeric input parser")
+struct NumericInputParseTests {
+    @Test func parsesDotDecimal() {
+        #expect(NumericInput.parse("7.9") == 7.9)
+    }
+
+    @Test func parsesCommaDecimal() {
+        // Comma-decimal locales (en_UA, fr_FR, etc.) used to silently return
+        // nil under NumberFormatter+.current. Both separators must parse.
+        #expect(NumericInput.parse("7,9") == 7.9)
+    }
+
+    @Test func parsesIntegerString() {
+        #expect(NumericInput.parse("50") == 50.0)
+    }
+
+    @Test func emptyReturnsNil() {
+        #expect(NumericInput.parse("") == nil)
+    }
+
+    @Test func filterAcceptsBothSeparators() {
+        #expect(NumericInput.filter("7.9") == "7.9")
+        #expect(NumericInput.filter("7,9") == "7,9")
+    }
+}

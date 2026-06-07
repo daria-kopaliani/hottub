@@ -1,14 +1,16 @@
 import SwiftUI
 
 enum NumericInput {
+    /// Filter typed input down to digits + a single decimal separator. Accepts
+    /// both "." and "," regardless of system locale so a comma-decimal user
+    /// can still type "7.5" and a dot-decimal user can still type "7,5".
     static func filter(_ s: String, allowDecimal: Bool = true) -> String {
-        let separator = Locale.current.decimalSeparator ?? "."
         var seenSeparator = false
         var result = ""
         for ch in s {
             if ch.isASCII && ch.isNumber {
                 result.append(ch)
-            } else if allowDecimal && String(ch) == separator && !seenSeparator {
+            } else if allowDecimal && (ch == "." || ch == ",") && !seenSeparator {
                 result.append(ch)
                 seenSeparator = true
             }
@@ -16,12 +18,14 @@ enum NumericInput {
         return result
     }
 
+    /// Parse a numeric string. Accepts both "." and "," as the decimal
+    /// separator so a user on a comma-decimal locale (en_UA, fr_FR, etc.)
+    /// who types "7.5" still gets a valid Double back — the prior
+    /// NumberFormatter+.current path silently returned nil.
     static func parse(_ s: String) -> Double? {
         guard !s.isEmpty else { return nil }
-        let formatter = NumberFormatter()
-        formatter.locale = .current
-        formatter.numberStyle = .decimal
-        return formatter.number(from: s)?.doubleValue
+        let normalized = s.replacingOccurrences(of: ",", with: ".")
+        return Double(normalized)
     }
 }
 
