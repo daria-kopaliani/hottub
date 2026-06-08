@@ -1,13 +1,13 @@
 //
-//  HotTubHelperUITestsLaunchTests.swift
-//  HotTubHelperUITests
+//  SoakUITestsLaunchTests.swift
+//  SoakUITests
 //
 //  Created by Daria Kopaliani on 29.05.2026.
 //
 
 import XCTest
 
-final class HotTubHelperUITestsLaunchTests: XCTestCase {
+final class SoakUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

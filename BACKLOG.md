@@ -36,7 +36,7 @@ Single biggest revenue lever for a shipped indie iOS utility per the 2025–2026
 ### Approach
 
 **String extraction:**
-- Audit every user-facing literal in `soak/HotTubHelper/HotTubHelper/` — start with Models.swift (`displayName`), Views/*.swift (all `Text(...)` strings, navigationTitle, footer strings, advisory bodies, recommendation titles), HotTubConfig.swift (any user-visible defaults).
+- Audit every user-facing literal in `soak/Soak/Soak/` — start with Models.swift (`displayName`), Views/*.swift (all `Text(...)` strings, navigationTitle, footer strings, advisory bodies, recommendation titles), HotTubConfig.swift (any user-visible defaults).
 - Right-click any existing `.strings` file → "Migrate to String Catalog" (Xcode 26 native command). For Soak, no existing `.strings` file is present — create `Localizable.xcstrings` fresh in the app target.
 - Mark strings for localization with `String(localized: "key")` or the SwiftUI `Text("key")` form (auto-localizes when the String Catalog has the key).
 - Use String Catalog's built-in pluralization for "%d person" / "%d people" and "%d session" / "%d sessions" — no manual `Localizable.stringsdict` needed; xcstrings handles it.
@@ -109,11 +109,11 @@ Step 1 — Resolve the open questions.
 The "Open questions" subsection of BACKLOG.md Up-Next has 5 items (JA translation method, DE volume defaults, What's-new copy template, subtitle re-translation strategy, privacy policy URL). Surface each in chat with my recommendation and any alternatives; wait for Daria's lock-in on each before proceeding.
 
 Step 2 — Extract strings.
-Audit every user-facing literal in /Users/dariakopaliani/Projects/moondog/apps/soak/HotTubHelper/HotTubHelper/. Files to sweep: Models.swift, Formulas.swift (only displayName-style literals if any), HotTubConfig.swift, ContentView.swift, NumericInput.swift, SettingsToolbar.swift, and every file in Views/. Catalog every string in a proposal to Daria (in chat) before creating Localizable.xcstrings — she should see the full string set before any code change. Pay particular attention to advisory-body strings in TestAdjustView (multi-sentence), recommendation titles ("Raises Alkalinity to X ppm" — has a number interpolation that needs proper format-arg in xcstrings), and onboarding help strings (multi-line, length-sensitive).
+Audit every user-facing literal in /Users/dariakopaliani/Projects/moondog/apps/soak/Soak/Soak/. Files to sweep: Models.swift, Formulas.swift (only displayName-style literals if any), HotTubConfig.swift, ContentView.swift, NumericInput.swift, SettingsToolbar.swift, and every file in Views/. Catalog every string in a proposal to Daria (in chat) before creating Localizable.xcstrings — she should see the full string set before any code change. Pay particular attention to advisory-body strings in TestAdjustView (multi-sentence), recommendation titles ("Raises Alkalinity to X ppm" — has a number interpolation that needs proper format-arg in xcstrings), and onboarding help strings (multi-line, length-sensitive).
 
 Step 3 — Scaffold + translate (only after Daria's "go").
 Per the "Propose before changing code" feedback: present the file diff for Localizable.xcstrings + the source-file edits (Text("key") replacements) before applying. Once go:
-- Create Localizable.xcstrings in the HotTubHelper app target. Xcode 26 String Catalog format.
+- Create Localizable.xcstrings in the Soak app target. Xcode 26 String Catalog format.
 - Replace every Text/literal with the localized form. Use String(localized:) for non-SwiftUI strings (Models displayNames). Use Text("key") in views — SwiftUI auto-localizes from the catalog.
 - Translate DE / ES / FR / IT via DeepL Free tier (50k char/month is sufficient — Soak's UI is ~3-5k chars).
 - Translate JA via Claude with DeepL cross-check (per benchmark, Claude handles Asian-language idioms + chemistry vocabulary better; DeepL cross-check catches obvious errors).

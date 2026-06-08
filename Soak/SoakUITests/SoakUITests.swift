@@ -1,13 +1,13 @@
 //
-//  HotTubHelperUITests.swift
-//  HotTubHelperUITests
+//  SoakUITests.swift
+//  SoakUITests
 //
 //  Created by Daria Kopaliani on 29.05.2026.
 //
 
 import XCTest
 
-final class HotTubHelperUITests: XCTestCase {
+final class SoakUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

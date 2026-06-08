@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct HotTubHelperApp: App {
+struct SoakApp: App {
     @StateObject private var config = HotTubConfig()
 
     var body: some Scene {

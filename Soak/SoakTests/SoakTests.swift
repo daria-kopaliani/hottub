@@ -1,5 +1,5 @@
 import Testing
-@testable import HotTubHelper
+@testable import Soak
 
 @Suite("Pool/spa chemistry dose formulas")
 struct FormulasTests {
