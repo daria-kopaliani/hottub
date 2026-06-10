@@ -1,1 +1,1 @@
-spa,bromine,chlorine,pH,alkalinity,calcium,calculator,dosing,jacuzzi,whirlpool,sanitizer,shock,ppm
+spa,jacuzzi,whirlpool,chemistry,calculator,ph,alkalinity,calcium,sanitizer,shock,test,balance,water
