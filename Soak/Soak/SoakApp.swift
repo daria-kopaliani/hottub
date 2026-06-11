@@ -7,6 +7,7 @@ struct SoakApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .reviewPrompter()
                 .environmentObject(config)
         }
     }
