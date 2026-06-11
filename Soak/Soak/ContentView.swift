@@ -12,18 +12,24 @@ struct ContentView: View {
 
     private var showOnboarding: Binding<Bool> {
         Binding(
-            get: { !config.hasCompletedOnboarding },
+            get: { !config.hasCompletedOnboarding && !CommandLine.arguments.contains("-UITestShowPaywall") },
             set: { newValue in
                 if !newValue { config.hasCompletedOnboarding = true }
             }
         )
     }
 
+    @State private var showPaywallForScreenshot =
+        CommandLine.arguments.contains("-UITestShowPaywall")
+
     var body: some View {
         rootView
             .fullScreenCover(isPresented: showOnboarding) {
                 OnboardingView()
                     .environmentObject(config)
+            }
+            .sheet(isPresented: $showPaywallForScreenshot) {
+                PaywallSheet()
             }
     }
 

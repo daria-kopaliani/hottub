@@ -1,0 +1,35 @@
+{
+  "identifier" : "B2C3D4E5-6F70-4A8B-9C0D-1E2F3A4B5C6D",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "SOAKPRO",
+      "localizations" : [
+        {
+          "description" : "Dosing, after-use top-ups, weekly shock, and advisories.",
+          "displayName" : "Soak Pro (lifetime)",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.kopaliani.HotTubHelper.pro",
+      "referenceName" : "Soak Pro",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "SOAK001",
+    "_developerTeamID" : "VB35WZUDUZ",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 0,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

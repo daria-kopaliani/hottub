@@ -1,0 +1,14 @@
+{
+  "productId": "com.kopaliani.HotTubHelper.pro",
+  "priceUSD": 3.99,
+  "reviewScreenshotPath": "screenshots/en/iphone/05-paywall.png",
+  "localizations": {
+    "en-US": {"name": "Soak Pro (lifetime)", "description": "Dosing, after-use top-ups, weekly shock, advisories"},
+    "de-DE": {"name": "Soak Pro (lebenslang)", "description": "Dosierung, Nachdosis, Stoßbehandlung, Hinweise"},
+    "es-ES": {"name": "Soak Pro (de por vida)", "description": "Dosis, recargas, tratamiento de choque, avisos"},
+    "es-MX": {"name": "Soak Pro (de por vida)", "description": "Dosis, recargas, tratamiento de choque, avisos"},
+    "fr-FR": {"name": "Soak Pro (à vie)", "description": "Dosage, appoints, traitement choc, avertissements"},
+    "it": {"name": "Soak Pro (a vita)", "description": "Dosaggio, rabbocchi, trattamento d'urto, avvisi"},
+    "ja": {"name": "Soak Pro（買い切り）", "description": "投与量・追加・ショック処理・アドバイス"}
+  }
+}
